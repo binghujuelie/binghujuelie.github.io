@@ -82,3 +82,37 @@ hexo d
 ---
 
 # 至此我们完成了最基础的hexo博客搭建
+
+# 将博客源文件上传至GitHub实现远程同步管理
+1. 将根目录以及主题根目录（如`themes/next`）下的隐藏文件`.git`删除，否则主题文件无法上传
+2. 上传本地博客项目
+```
+git init
+git remote add origin 仓库地址
+git checkout -b hexo
+git add .
+git commit -m ""
+git push -u origin hexo
+```
+
+# 其他设备上clone远端GitHub分支文件到本地
+```
+git clone -b hexo 仓库地址
+```
+
+# 本地环境搭建及调试运行
+```
+npm install hexo --no-optional
+hexo clean && hexo g && hexo s
+```
+
+# 同步项目文件到GitHub
+```
+git add .
+git commit -m ""
+// 先拉原来 GitHub 分支上的源文件到本地，进行合并
+// 分支名后面的“--allow-unrelated-histories”是为了弹出“fatal: refusing to merge unrelated histories.”的错误
+git pull origin hexo --allow-unrelated-histories
+// 比较解决前后版本冲突后，push 源文件到 GitHub 的分支
+git push origin hexo
+```
