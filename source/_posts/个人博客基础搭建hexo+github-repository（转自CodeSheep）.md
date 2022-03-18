@@ -117,3 +117,20 @@ git pull origin hexo --allow-unrelated-histories
 // 比较解决前后版本冲突后，push 源文件到 GitHub 的分支
 git push origin hexo
 ```
+
+# 解决GitHub连接失败以及超时等连接问题
+错误示例：`Failed to connect to github.com port 443:connection timed out`
+我的情况是因为开启了clash等代理软件，git的代理参数端口没有及时更改为代理软件的端口导致的
+**要在git bash中运行以下指令，注意需要将端口(1080)更改为`代理软件`的端口**
+```
+git config --global http.proxy http://127.0.0.1:1080
+
+git config --global https.proxy http://127.0.0.1:1080
+```
+
+取消代理（用于解决方法无效后的恢复操作）
+```
+git config --global --unset http.proxy
+
+git config --global --unset https.proxy
+```
