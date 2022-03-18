@@ -5,7 +5,7 @@ tags:
    - Java
    - 教程
 categories: 基础知识
-description: Java入门基础知识，第二篇有格式问题暂不能发布
+description: Java入门基础知识
 ---
 
 
