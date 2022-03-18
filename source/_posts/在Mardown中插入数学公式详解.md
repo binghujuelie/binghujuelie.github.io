@@ -1,18 +1,8 @@
 ---
 title: Mathjax语法详细
-<<<<<<< HEAD
-<<<<<<< HEAD
 date: 2022-3-10 20:00:00
 categories: 
 - 教程
-=======
-categories: 
-- Markdown
->>>>>>> 642ff40eca425e4e27db90d0f896bac0950b4455
-=======
-categories: 
-- Markdown
->>>>>>> 642ff40eca425e4e27db90d0f896bac0950b4455
 tags: 
 - Markdown
 - 笔记

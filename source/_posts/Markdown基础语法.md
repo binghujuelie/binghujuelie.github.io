@@ -1,18 +1,8 @@
 ---
 title: Markdown基础语法练习笔记
-<<<<<<< HEAD
-<<<<<<< HEAD
 date: 2022-2-25 10:10:00
 categories: 
 - 教程
-=======
-categories: 
-- Markdown
->>>>>>> 642ff40eca425e4e27db90d0f896bac0950b4455
-=======
-categories: 
-- Markdown
->>>>>>> 642ff40eca425e4e27db90d0f896bac0950b4455
 tags: 
 - Markdown
 - 笔记

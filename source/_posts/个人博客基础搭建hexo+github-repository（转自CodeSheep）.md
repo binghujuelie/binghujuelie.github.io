@@ -1,18 +1,8 @@
 ---
 title: 用Hexo和GitHub仓库搭建一个基础的个人博客
-<<<<<<< HEAD
-<<<<<<< HEAD
 date: 2022-3-1 10:22:00
 categories: 
 - 教程
-=======
-categories: 
-- Hexo基础博客创建
->>>>>>> 642ff40eca425e4e27db90d0f896bac0950b4455
-=======
-categories: 
-- Hexo基础博客创建
->>>>>>> 642ff40eca425e4e27db90d0f896bac0950b4455
 tags: 
 - Hexo
 - 博客
