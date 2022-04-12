@@ -9,7 +9,6 @@ categories: 基础知识
 description: SQL学习笔记
 ---
 
-
 # SQL教程
 
 ## 关系数据库概述
@@ -35,18 +34,16 @@ description: SQL学习笔记
 │     │         │     │
 └─────┘         └─────┘
    │               │
-```
-
 ┌───┴───┐       ┌───┴───┐
 │       │       │       │
 ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐
 │     │ │     │ │     │ │     │
 └─────┘ └─────┘ └─────┘ └─────┘
+```
 网状模型把每个数据节点和其他很多节点都连接起来，它的数据结构看起来就像很多城市之间的路网：
 
 ```
  ┌─────┐      ┌─────┐
-```
 
 ┌─│     │──────│     │──┐
 │ └─────┘      └─────┘  │
@@ -62,8 +59,9 @@ description: SQL学习笔记
 │  ┌─────┐     ┌─────┐  │
 └──│     │─────│     │──┘
 └─────┘     └─────┘
+```
 关系模型把数据看作是一个二维表格，任何数据都可以通过行号+列号来唯一确定，它的数据模型看起来就是一个Excel表：
-
+```
 ┌─────┬─────┬─────┬─────┬─────┐
 │     │     │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┤
@@ -73,6 +71,7 @@ description: SQL学习笔记
 ├─────┼─────┼─────┼─────┼─────┤
 │     │     │     │     │     │
 └─────┴─────┴─────┴─────┴─────┘
+```
 随着时间的推移和市场竞争，最终，基于关系模型的关系数据库获得了绝对市场份额。
 
 为什么关系数据库获得了最广泛的应用？
@@ -83,39 +82,37 @@ description: SQL学习笔记
 
 基于数学理论的关系模型虽然讲起来挺复杂，但是，基于日常生活的关系模型却十分容易理解。我们以学校班级为例，一个班级的学生就可以用一个表格存起来，并且定义如下：
 
-| ID | 姓名 | 班级ID | 性别 | 年龄 |
-| -- | ---- | ------ | ---- | ---- |
-| 1  | 小明 | 201    | M    | 9    |
-| 2  | 小红 | 202    | F    | 8    |
-| 3  | 小军 | 202    | M    | 8    |
-| 4  | 小白 | 201    | F    | 9    |
+| ID   | 姓名   | 班级ID | 性别   | 年龄   |
+| ---- | ---- | ---- | ---- | ---- |
+| 1    | 小明   | 201  | M    | 9    |
+| 2    | 小红   | 202  | F    | 8    |
+| 3    | 小军   | 202  | M    | 8    |
+| 4    | 小白   | 201  | F    | 9    |
 
 其中，班级ID对应着另一个班级表：
-
-| ID  | 名称       | 班主任 |
-| --- | ---------- | ------ |
-| 201 | 二年级一班 | 王老师 |
-| 202 | 二年级二班 | 李老师 |
-
+| ID   | 名称    | 班主任  |
+| ---- | ----- | ---- |
+| 201  | 二年级一班 | 王老师  |
+| 202  | 二年级二班 | 李老师  |
 通过给定一个班级名称，可以查到一条班级记录，根据班级ID，又可以查到多条学生记录，这样，二维表之间就通过ID映射建立了“一对多”关系。
 
 ### 数据类型
 
 对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：
 
-| 名称         | 类型           | 说明                                                                                   |
-| ------------ | -------------- | -------------------------------------------------------------------------------------- |
-| INT          | 整型           | 4字节整数类型，范围约+/-21亿                                                           |
-| BIGINT       | 长整型         | 8字节整数类型，范围约+/-922亿亿                                                        |
-| REAL         | 浮点型         | 4字节浮点数，范围约+/-1038                                                             |
-| DOUBLE       | 浮点型         | 8字节浮点数，范围约+/-10308                                                            |
-| DECIMAL(M,N) | 高精度小数     | 由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算 |
-| CHAR(N)      | 定长字符串     | 存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串                         |
-| VARCHAR(N)   | 变长字符串     | 存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串                    |
-| BOOLEAN      | 布尔类型       | 存储True或者False                                                                      |
-| DATE         | 日期类型       | 存储日期，例如，2018-06-22                                                             |
-| TIME         | 时间类型       | 存储时间，例如，12:20:59                                                               |
-| DATETIME     | 日期和时间类型 | 存储日期+时间，例如，2018-06-22 12:20:59                                               |
+| 名称           | 类型      | 说明                                       |
+| ------------ | ------- | ---------------------------------------- |
+| INT          | 整型      | 4字节整数类型，范围约+/-21亿                        |
+| BIGINT       | 长整型     | 8字节整数类型，范围约+/-922亿亿                      |
+| REAL         | 浮点型     | 4字节浮点数，范围约+/-1038                        |
+| DOUBLE       | 浮点型     | 8字节浮点数，范围约+/-10308                       |
+| DECIMAL(M,N) | 高精度小数   | 由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算 |
+| CHAR(N)      | 定长字符串   | 存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串    |
+| VARCHAR(N)   | 变长字符串   | 存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串 |
+| BOOLEAN      | 布尔类型    | 存储True或者False                            |
+| DATE         | 日期类型    | 存储日期，例如，2018-06-22                       |
+| TIME         | 时间类型    | 存储时间，例如，12:20:59                         |
+| DATETIME     | 日期和时间类型 | 存储日期+时间，例如，2018-06-22 12:20:59           |
 
 上面的表中列举了最常用的数据类型。很多数据类型还有别名，例如，`REAL`又可以写成 `FLOAT`(24)。还有一些不常用的数据类型，例如，`TINYINT`（范围在0~255）。各数据库厂商还会支持特定的数据类型，例如 `JSON`。
 
@@ -216,37 +213,37 @@ MySQL安装后会自动在后台运行。为了验证MySQL安装是否正确，�
 
 例如，一个班级表：
 
-| ID  | 名称       | 班主任 |
-| --- | ---------- | ------ |
-| 201 | 二年级一班 | 王老师 |
-| 202 | 二年级二班 | 李老师 |
+| ID   | 名称    | 班主任  |
+| ---- | ----- | ---- |
+| 201  | 二年级一班 | 王老师  |
+| 202  | 二年级二班 | 李老师  |
 
 每一行对应着一个班级，而一个班级对应着多个学生，所以班级表和学生表的关系就是“一对多”：
 
-| ID | 姓名 | 班级ID | 性别 | 年龄 |
-| -- | ---- | ------ | ---- | ---- |
-| 1  | 小明 | 201    | M    | 9    |
-| 2  | 小红 | 202    | F    | 8    |
-| 3  | 小军 | 202    | M    | 8    |
-| 4  | 小白 | 201    | F    | 9    |
+| ID   | 姓名   | 班级ID | 性别   | 年龄   |
+| ---- | ---- | ---- | ---- | ---- |
+| 1    | 小明   | 201  | M    | 9    |
+| 2    | 小红   | 202  | F    | 8    |
+| 3    | 小军   | 202  | M    | 8    |
+| 4    | 小白   | 201  | F    | 9    |
 
 反过来，如果我们先在学生表中定位了一行记录，例如 `ID=1`的小明，要确定他的班级，只需要根据他的“班级ID”对应的值201找到班级表中 `ID=201`的记录，即二年级一班。所以，学生表和班级表是“多对一”的关系。
 
 如果我们把班级表分拆得细一点，例如，单独创建一个教师表：
 
-| ID | 名称   | 年龄 |
-| -- | ------ | ---- |
-| A1 | 王老师 | 26   |
-| A2 | 张老师 | 39   |
-| A3 | 李老师 | 32   |
-| A4 | 赵老师 | 27   |
+| ID   | 名称   | 年龄   |
+| ---- | ---- | ---- |
+| A1   | 王老师  | 26   |
+| A2   | 张老师  | 39   |
+| A3   | 李老师  | 32   |
+| A4   | 赵老师  | 27   |
 
 班级表只存储教师ID：
 
-| ID  | 名称       | 班主任ID |
-| --- | ---------- | -------- |
-| 201 | 二年级一班 | A1       |
-| 202 | 二年级二班 | A3       |
+| ID   | 名称    | 班主任ID |
+| ---- | ----- | ----- |
+| 201  | 二年级一班 | A1    |
+| 202  | 二年级二班 | A3    |
 
 这样，一个班级总是对应一个教师，班级表和教师表就是“一对一”关系。
 
@@ -256,10 +253,10 @@ MySQL安装后会自动在后台运行。为了验证MySQL安装是否正确，�
 
 在关系数据库中，一张表中的每一行数据被称为一条记录。一条记录就是由多个字段组成的。例如，`students`表的两行记录：
 
-| id | class_id | name | gender | score |
-| -- | -------- | ---- | ------ | ----- |
-| 1  | 1        | 小明 | M      | 90    |
-| 2  | 1        | 小红 | F      | 95    |
+| id   | class_id | name | gender | score |
+| ---- | -------- | ---- | ------ | ----- |
+| 1    | 1        | 小明   | M      | 90    |
+| 2    | 1        | 小红   | F      | 95    |
 
 每一条记录都包含若干定义好的字段。同一个表的所有记录都有相同的字段定义。
 
@@ -304,17 +301,17 @@ MySQL安装后会自动在后台运行。为了验证MySQL安装是否正确，�
 
 当我们用主键唯一标识记录时，我们就可以在 `students`表中确定任意一个学生的记录：
 
-| id | name | other columns... |
-| -- | ---- | ---------------- |
-| 1  | 小明 | ...              |
-| 2  | 小红 | ...              |
+| id   | name | other columns... |
+| ---- | ---- | ---------------- |
+| 1    | 小明   | ...              |
+| 2    | 小红   | ...              |
 
 我们还可以在 `classes`表中确定任意一个班级记录：
 
-| id | name | other columns... |
-| -- | ---- | ---------------- |
-| 1  | 一班 | ...              |
-| 2  | 二班 | ...              |
+| id   | name | other columns... |
+| ---- | ---- | ---------------- |
+| 1    | 一班   | ...              |
+| 2    | 二班   | ...              |
 
 但是我们如何确定 `students`表的一条记录，例如，`id=1`的小明，属于哪个班级呢？
 
@@ -322,11 +319,11 @@ MySQL安装后会自动在后台运行。为了验证MySQL安装是否正确，�
 
 为了表达这种一对多的关系，我们需要在students表中加入一列 `class_id`，让它的值与 `classes`表的某条记录相对应：
 
-| id | class_id | name | other columns... |
-| -- | -------- | ---- | ---------------- |
-| 1  | 1        | 小明 | ...              |
-| 2  | 1        | 小红 | ...              |
-| 5  | 2        | 小白 | ...              |
+| id   | class_id | name | other columns... |
+| ---- | -------- | ---- | ---------------- |
+| 1    | 1        | 小明   | ...              |
+| 2    | 1        | 小红   | ...              |
+| 5    | 2        | 小白   | ...              |
 
 这样，我们就可以根据 `class_id`这个列直接定位出一个 `students`表的记录应该对应到classes的哪条记录。
 
@@ -370,30 +367,30 @@ DROP FOREIGN KEY fk_class_id;
 
 `teachers`表：
 
-| id | name   |
-| -- | ------ |
-| 1  | 张老师 |
-| 2  | 王老师 |
-| 3  | 李老师 |
-| 4  | 赵老师 |
+| id   | name |
+| ---- | ---- |
+| 1    | 张老师  |
+| 2    | 王老师  |
+| 3    | 李老师  |
+| 4    | 赵老师  |
 
 `classes`表：
 
-| id | name |
-| -- | ---- |
-| 1  | 一班 |
-| 2  | 二班 |
+| id   | name |
+| ---- | ---- |
+| 1    | 一班   |
+| 2    | 二班   |
 
 中间表 `teacher_class`关联两个一对多关系：
 
-| id | teacher_id | class_id |
-| -- | ---------- | -------- |
-| 1  | 1          | 1        |
-| 2  | 1          | 2        |
-| 3  | 2          | 1        |
-| 4  | 2          | 2        |
-| 5  | 3          | 1        |
-| 6  | 4          | 2        |
+| id   | teacher_id | class_id |
+| ---- | ---------- | -------- |
+| 1    | 1          | 1        |
+| 2    | 1          | 2        |
+| 3    | 2          | 1        |
+| 4    | 2          | 2        |
+| 5    | 3          | 1        |
+| 6    | 4          | 2        |
 
 通过中间表 `teacher_class`可知 `teachers`到 `classes`的关系：
 
@@ -415,11 +412,11 @@ DROP FOREIGN KEY fk_class_id;
 
 例如，`students`表的每个学生可以有自己的联系方式，如果把联系方式存入另一个表 `contacts`，我们就可以得到一个“一对一”关系：
 
-| id | student_id | mobile      |
-| -- | ---------- | ----------- |
-| 1  | 1          | 135xxxx6300 |
-| 2  | 2          | 138xxxx2209 |
-| 3  | 5          | 139xxxx8086 |
+| id   | student_id | mobile      |
+| ---- | ---------- | ----------- |
+| 1    | 1          | 135xxxx6300 |
+| 2    | 2          | 138xxxx2209 |
+| 3    | 5          | 139xxxx8086 |
 
 有细心的童鞋会问，既然是一对一关系，那为啥不给 `students`表增加一个 `mobile`列，这样就能合二为一了？
 
@@ -435,11 +432,11 @@ DROP FOREIGN KEY fk_class_id;
 
 例如，对于 `students`表：
 
-| id                                                                 | class_id | name | gender | score |
-| ------------------------------------------------------------------ | -------- | ---- | ------ | ----- |
-| 1                                                                  | 1        | 小明 | M      | 90    |
-| 2                                                                  | 1        | 小红 | F      | 95    |
-| 3                                                                  | 1        | 小军 | M      | 88    |
+| id                                      | class_id | name | gender | score |
+| --------------------------------------- | -------- | ---- | ------ | ----- |
+| 1                                       | 1        | 小明   | M      | 90    |
+| 2                                       | 1        | 小红   | F      | 95    |
+| 3                                       | 1        | 小军   | M      | 88    |
 | 如果要经常根据 `score`列进行查询，就可以对 `score`列创建索引： |          |      |        |       |
 
 ```sql
@@ -657,8 +654,8 @@ SELECT * FROM students WHERE (score < 80 OR score > 90) AND gender = 'M';
 
 ### 通配符
 
-| 条件             | 表达式举例1     | 表达式举例2      | 说明                                              |
-| ---------------- | --------------- | ---------------- | ------------------------------------------------- |
+| 条件         | 表达式举例1          | 表达式举例2           | 说明                                  |
+| ---------- | --------------- | ---------------- | ----------------------------------- |
 | 使用LIKE判断相似 | name LIKE 'ab%' | name LIKE '%bc%' | %表示任意字符，例如'ab%'将匹配'ab'，'abc'，'abcd' |
 
 通配符也是用在过滤语句中，但它只能用于文本字段。
@@ -875,12 +872,12 @@ SELECT COUNT(*) boys FROM students WHERE gender = 'M';
 
 除了 `COUNT()`函数外，SQL还提供了如下聚合函数：
 
-| 函数 | 说明                                   |
-| ---- | -------------------------------------- |
+| 函数   | 说明                  |
+| ---- | ------------------- |
 | SUM  | 计算某一列的合计值，该列必须为数值类型 |
 | AVG  | 计算某一列的平均值，该列必须为数值类型 |
-| MAX  | 计算某一列的最大值                     |
-| MIN  | 计算某一列的最小值                     |
+| MAX  | 计算某一列的最大值           |
+| MIN  | 计算某一列的最小值           |
 
 注意，`MAX()`和 `MIN()`函数并不限于数值类型。如果是字符类型，`MAX()`和 `MIN()`会返回 `排序最后`和 `排序最前`的字符。
 
@@ -990,11 +987,11 @@ WHERE column_name IN (value1,value2,...)
 原始的表 (在实例中使用：)
 Persons 表:
 
-|Id|LastName|FirstName|Address|City|
-|--|--------|---------|-------|----|
-|1|Adams|John|Oxford Street|London|
-|2|Bush|George|Fifth Avenue|New York|
-|3|Carter|Thomas|Changan Street|Beijing|
+| Id   | LastName | FirstName | Address        | City     |
+| ---- | -------- | --------- | -------------- | -------- |
+| 1    | Adams    | John      | Oxford Street  | London   |
+| 2    | Bush     | George    | Fifth Avenue   | New York |
+| 3    | Carter   | Thomas    | Changan Street | Beijing  |
 
 IN 操作符实例
 
@@ -1008,10 +1005,10 @@ WHERE LastName IN ('Adams','Carter')
 ```
 
 结果集：
-|Id|LastName|FirstName|Address|City|
-|--|--------|---------|-------|----|
-|1|Adams|John|Oxford Street|London|
-|3|Carter|Thomas|Changan Street|Beijing|
+| Id   | LastName | FirstName | Address        | City    |
+| ---- | -------- | --------- | -------------- | ------- |
+| 1    | Adams    | John      | Oxford Street  | London  |
+| 3    | Carter   | Thomas    | Changan Street | Beijing |
 
 #### 带有比较运算符的子查询
 
@@ -1025,7 +1022,7 @@ FROM SC X
 WHERE Grade >=(SELECT AVG(Grade)
                FROM SC y
                WHERE y.Sno=x.Sno);
-``` 
+```
 
 #### 带有ANY（SOME）或ALL谓词的子查询
 
@@ -1483,7 +1480,7 @@ SELECT * FROM students;
 
 如果`WHERE`条件没有匹配到任何记录，`UPDATE`语句不会报错，也不会有任何记录被更新。例如：
 
-```sql
+​```sql
 -- 更新id=999的记录
 UPDATE students SET score=100 WHERE id=999;
 -- 查询并观察结果:
@@ -1978,11 +1975,11 @@ ROLLBACK;
 SQL标准定义了4种隔离级别，分别对应可能出现的数据不一致的情况：
 
 | Isolation Level  | 脏读（Dirty Read） | 不可重复读（Non Repeatable Read） | 幻读（Phantom Read） |
-| ---------------- | ------------------ | --------------------------------- | -------------------- |
-| Read Uncommitted | Yes                | Yes                               | Yes                  |
-| Read Committed   | -                  | Yes                               | Yes                  |
-| Repeatable Read  | -                  | -                                 | Yes                  |
-| Serializable     | -                  | -                                 | -                    |
+| ---------------- | -------------- | -------------------------- | ---------------- |
+| Read Uncommitted | Yes            | Yes                        | Yes              |
+| Read Committed   | -              | Yes                        | Yes              |
+| Repeatable Read  | -              | -                          | Yes              |
+| Serializable     | -              | -                          | -                |
 
 ### Read Uncommitted
 
@@ -2002,15 +1999,15 @@ mysql> select * from students;
 1 row in set (0.00 sec)
 ```
 
-| 时刻 | 事务A                                             | 事务B                                            |
-| ---- | ------------------------------------------------- | ------------------------------------------------ |
+| 时刻   | 事务A                                      | 事务B                                      |
+| ---- | ---------------------------------------- | ---------------------------------------- |
 | 1    | SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED; | SET TRANSACTIONISOLATION LEVEL READ UNCOMMITTED; |
-| 2    | BEGIN;                                            | BEGIN;                                           |
-| 3    | UPDATE students SET name = 'Bob' WHERE id = 1;    |                                                  |
-| 4    |                                                   | SELECT * FROM students WHERE id = 1;             |
-| 5    | ROLLBACK;                                         |                                                  |
-| 6    |                                                   | SELECT * FROM students WHERE id = 1;             |
-| 7    |                                                   | COMMIT;                                          |
+| 2    | BEGIN;                                   | BEGIN;                                   |
+| 3    | UPDATE students SET name = 'Bob' WHERE id = 1; |                                          |
+| 4    |                                          | SELECT * FROM students WHERE id = 1;     |
+| 5    | ROLLBACK;                                |                                          |
+| 6    |                                          | SELECT * FROM students WHERE id = 1;     |
+| 7    |                                          | COMMIT;                                  |
 
 当事务A执行完第3步时，它更新了 `id=1`的记录，但并未提交，而事务B在第4步读取到的数据就是未提交的数据。
 
@@ -2038,15 +2035,15 @@ mysql> select * from students;
 
 然后，分别开启两个MySQL客户端连接，按顺序依次执行事务A和事务B：
 
-| 时刻 | 事务A                                           | 事务B                                          |
-| ---- | ----------------------------------------------- | ---------------------------------------------- |
+| 时刻   | 事务A                                      | 事务B                                      |
+| ---- | ---------------------------------------- | ---------------------------------------- |
 | 1    | SET TRANSACTION ISOLATION LEVEL READ COMMITTED; | SET TRANSACTIONISOLATION LEVEL READ COMMITTED; |
-| 2    | BEGIN;                                          | BEGIN;                                         |
-| 3    |                                                 | SELECT * FROM students WHERE id = 1;           |
-| 4    | UPDATE students SET name = 'Bob' WHERE id = 1;  |                                                |
-| 5    | COMMIT;                                         |                                                |
-| 6    |                                                 | SELECT * FROM students WHERE id = 1;           |
-| 7    |                                                 | COMMIT;                                        |
+| 2    | BEGIN;                                   | BEGIN;                                   |
+| 3    |                                          | SELECT * FROM students WHERE id = 1;     |
+| 4    | UPDATE students SET name = 'Bob' WHERE id = 1; |                                          |
+| 5    | COMMIT;                                  |                                          |
+| 6    |                                          | SELECT * FROM students WHERE id = 1;     |
+| 7    |                                          | COMMIT;                                  |
 
 当事务B第一次执行第3步的查询时，得到的结果是 `Alice`，随后，由于事务A在第4步更新了这条记录并提交，所以，事务B在第6步再次执行同样的查询时，得到的结果就变成了 `Bob`，因此，在Read Committed隔离级别下，事务不可重复读同一条记录，因为很可能读到的结果不一致。
 
@@ -2070,17 +2067,17 @@ mysql> select * from students;
 
 然后，分别开启两个MySQL客户端连接，按顺序依次执行事务A和事务B：
 
-| 时刻 | 事务A                                               | 事务B                                             |
-| ---- | --------------------------------------------------- | ------------------------------------------------- |
-| 1    | SET TRANSACTION ISOLATION LEVEL READ COMMITTED;     | SET TRANSACTIONISOLATION LEVEL READ COMMITTED;    |
-| 2    | BEGIN;                                              | BEGIN;                                            |
-| 3    |                                                     | SELECT * FROM students WHERE id = 99;             |
-| 4    | INSERT INTO students (id, name) VALUES (99, 'Bob'); |                                                   |
-| 5    | COMMIT;                                             |                                                   |
-| 6    |                                                     | SELECT * FROM students WHERE id = 99;             |
-| 7    |                                                     | UPDATE students SET name = 'Alice' WHERE id = 99; |
-| 8    |                                                     | SELECT * FROM students WHERE id = 99;             |
-| 9    |                                                     | COMMIT;                                           |
+| 时刻   | 事务A                                      | 事务B                                      |
+| ---- | ---------------------------------------- | ---------------------------------------- |
+| 1    | SET TRANSACTION ISOLATION LEVEL READ COMMITTED; | SET TRANSACTIONISOLATION LEVEL READ COMMITTED; |
+| 2    | BEGIN;                                   | BEGIN;                                   |
+| 3    |                                          | SELECT * FROM students WHERE id = 99;    |
+| 4    | INSERT INTO students (id, name) VALUES (99, 'Bob'); |                                          |
+| 5    | COMMIT;                                  |                                          |
+| 6    |                                          | SELECT * FROM students WHERE id = 99;    |
+| 7    |                                          | UPDATE students SET name = 'Alice' WHERE id = 99; |
+| 8    |                                          | SELECT * FROM students WHERE id = 99;    |
+| 9    |                                          | COMMIT;                                  |
 
 事务B在第3步第一次读取 `id=99`的记录时，读到的记录为空，说明不存在 `id=99`的记录。随后，事务A在第4步插入了一条 `id=99`的记录并提交。事务B在第6步再次读取 `id=99`的记录时，读到的记录仍然为空，但是，事务B在第7步试图更新这条不存在的记录时，竟然成功了，并且，事务B在第8步再次读取 `id=99`的记录时，记录出现了。
 
@@ -2237,17 +2234,17 @@ Preparing: delete from Products where ProductID = ?
 
 select 语句属性配置细节：
 
-|属性|描述|取值|默认|
-|----|---|----|----|
-|id|在这个模式下唯一的标识符，可被其它语句引用|||
-|parameterType|传给此语句的参数的完整类名或别名|||
-|resultType|语句返回值类型的整类名或别名。注意，如果是集合，那么这里填写的是集合的项的整类名或别名，而不是集合本身的类名。（resultType 与resultMap 不能并用)|||
-|resultMap|引用的外部resultMap 名。结果集映射是MyBatis 中最强大的特性。许多复杂的映射都可以轻松解决。（resultType 与resultMap 不能并用）|||
-|flushCache|如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false|true|false|false|
-|useCache|如果设为true，则语句的结果集将被缓存。select 语句默认设为false true|false|false|
-|timeout|设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定|true|false|false|
-|timeout|设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定|正整数|未设置|
-|fetchSize|设置一个值后，驱动器会在结果集数目达到此数值后，激发返回，默认为不设值，由驱动器自己决定|正整数|驱动器决定|
+| 属性            | 描述                                       | 取值    | 默认    |
+| ------------- | ---------------------------------------- | ----- | ----- |
+| id            | 在这个模式下唯一的标识符，可被其它语句引用                    |       |       |
+| parameterType | 传给此语句的参数的完整类名或别名                         |       |       |
+| resultType    | 语句返回值类型的整类名或别名。注意，如果是集合，那么这里填写的是集合的项的整类名或别名，而不是集合本身的类名。（resultType 与resultMap 不能并用) |       |       |
+| resultMap     | 引用的外部resultMap 名。结果集映射是MyBatis 中最强大的特性。许多复杂的映射都可以轻松解决。（resultType 与resultMap 不能并用） |       |       |
+| flushCache    | 如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false | true  | false |
+| useCache      | 如果设为true，则语句的结果集将被缓存。select 语句默认设为false true | false | false |
+| timeout       | 设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定     | true  | false |
+| timeout       | 设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定     | 正整数   | 未设置   |
+| fetchSize     | 设置一个值后，驱动器会在结果集数目达到此数值后，激发返回，默认为不设值，由驱动器自己决定 | 正整数   | 驱动器决定 |
 |statementType|statement，preparedstatement，callablestatement。
 预准备语句、可调用语句|STATEMENT
 PREPARED
@@ -2301,15 +2298,15 @@ SCROLL_INSENSITIVE|驱动器决定|
 
 insert语句属性配置细节：
 
-|属性|描述|取值|默认|
-|----|---|----|----|
-|id|在这个模式下唯一的标识符，可被其它语句引用|||
-|parameterType|传给此语句的参数的完整类名或别名|||
-|flushCache|如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false| true|false |false|
-|useCache|如果设为true，则语句的结果集将被缓存。select 语句默认设为false| true|false| false|
-|timeout|设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定|true|false |false|
-|timeout|设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定|正整数|未设置|
-|fetchSize|设置一个值后，驱动器会在结果集数目达到此数值后，激发返回，默认为不设值，由驱动器自己决定|正整数|驱动器决定|
+| 属性            | 描述                                       | 取值   | 默认    |
+| ------------- | ---------------------------------------- | ---- | ----- |
+| id            | 在这个模式下唯一的标识符，可被其它语句引用                    |      |       |
+| parameterType | 传给此语句的参数的完整类名或别名                         |      |       |
+| flushCache    | 如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false | true | false |
+| useCache      | 如果设为true，则语句的结果集将被缓存。select 语句默认设为false  | true | false |
+| timeout       | 设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定     | true | false |
+| timeout       | 设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定     | 正整数  | 未设置   |
+| fetchSize     | 设置一个值后，驱动器会在结果集数目达到此数值后，激发返回，默认为不设值，由驱动器自己决定 | 正整数  | 驱动器决定 |
 statementType, statement，preparedstatement，callablestatement。
 预准备语句、可调用语句|STATEMENT
 PREPARED
@@ -2323,10 +2320,10 @@ true|false|false|
 
 selectKey语句属性配置细节：
 
-|属性|描述|取值|
-|----|---|----|
-|keyProperty|selectKey 语句生成结果需要设置的属性。||
-|resultType|生成结果类型，MyBatis 允许使用基本的数据类型，包括String 、int类型。||
+| 属性          | 描述                                       | 取值   |
+| ----------- | ---------------------------------------- | ---- |
+| keyProperty | selectKey 语句生成结果需要设置的属性。                 |      |
+| resultType  | 生成结果类型，MyBatis 允许使用基本的数据类型，包括String 、int类型。 |      |
 |order|可以设成BEFORE 或者AFTER，如果设为BEFORE，那它会先选择主键，然后设置keyProperty，再执行insert语句；如果设为AFTER，它就先运行insert 语句再运行selectKey 语句，通常是insert 语句中内部调用数据库（像Oracle）内嵌的序列机制。 |BEFORE
 AFTER|
 |statementType|像上面的那样， MyBatis 支持STATEMENT，PREPARED和CALLABLE 的语句形式， 对应Statement ，PreparedStatement 和CallableStatement 响应|STATEMENT
@@ -2360,15 +2357,15 @@ CALLABLE|
 
  update、delete语句属性配置细节：
 
-|属性|描述|取值|默认|
-|----|---|----|----|
-|id|在这个模式下唯一的标识符，可被其它语句引用|||
-|parameterType|传给此语句的参数的完整类名或别名|||
-|flushCache|如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false| true|false |false|
-|useCache|如果设为true，则语句的结果集将被缓存。select 语句默认设为false| true|false| false|
-|timeout|设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定|true|false |false|
-|timeout|设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定|正整数|未设置|
-|fetchSize|设置一个值后，驱动器会在结果集数目达到此数值后，激发返回，默认为不设值，由驱动器自己决定|正整数|驱动器决定|
+| 属性            | 描述                                       | 取值   | 默认    |
+| ------------- | ---------------------------------------- | ---- | ----- |
+| id            | 在这个模式下唯一的标识符，可被其它语句引用                    |      |       |
+| parameterType | 传给此语句的参数的完整类名或别名                         |      |       |
+| flushCache    | 如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false | true | false |
+| useCache      | 如果设为true，则语句的结果集将被缓存。select 语句默认设为false  | true | false |
+| timeout       | 设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定     | true | false |
+| timeout       | 设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定     | 正整数  | 未设置   |
+| fetchSize     | 设置一个值后，驱动器会在结果集数目达到此数值后，激发返回，默认为不设值，由驱动器自己决定 | 正整数  | 驱动器决定 |
 statementType, statement，preparedstatement，callablestatement。
 预准备语句、可调用语句|STATEMENT
 PREPARED

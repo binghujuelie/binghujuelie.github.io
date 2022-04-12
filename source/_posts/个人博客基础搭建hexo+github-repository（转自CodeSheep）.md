@@ -9,57 +9,36 @@ tags:
 - GitHub
 ---
 
-
-
 # 第一步 安装软件
 ## Node.js
-1. 检查版本：
-```
-node -v
-npm -v
-```
-2. 切换国内镜像源：
+1. 检查版本： `node -v` `npm -v`
+2. 切换国内镜像源： 
+
 ```
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
-3. 检查镜像源：
-```
-cnpm
-```
-4. 安装hexo：
-```
-cnpm install -g hexo-cli
-```
-5. 检查hexo：
-```
-hexo -v
-```
+
+1. 检查镜像源： `cnpm`
+2. 安装hexo： `cnpm install -g hexo-cli`
+3. 检查hexo： `hexo -v`
 
 ---
 
 # 第二步 建立博客
 1. 创建一个目录作为博客根目录，进入该目录下
-2. 用hexo生成博客：
-```
-hexo init
-```
-3. 生成博客：
-```
-hexo g
-```
-4. 启动博客：
-```
-hexo s
-```
-5. 访问：
-```
-localhost:4000
-```
-6. 新建文章：
-```
-hexo n "file_name"
-```
+2. 用hexo生成博客：`hexo init`
 
+
+3. 生成博客：`hexo g`
+
+
+4. 启动博客：`hexo s`
+
+
+5. 访问：`localhost:4000`
+
+
+6. 新建文章：`hexo n "file_name"`
 ---
 
 # 第三步 将博客部署到Github
@@ -75,11 +54,7 @@ type: git
 repo: repository address
 branch: master
 ```
-5. 部署到远端：
-```
-hexo d
-```
-
+5. 部署到远端：`hexo d`
 ---
 
 # 至此我们完成了最基础的hexo博客搭建

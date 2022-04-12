@@ -2,37 +2,13 @@
 title: java容器
 tags: 
    - java
-   - 教程
    - 容器
-
 categories: 
-   - 教程
-
-
+   - 基础知识
 description: java容器的简单介绍,注重源码
 ---
 
 # Java 容器
-<!-- GFM-TOC -->
-* [Java 容器](#java-容器)
-    * [一、概览](#一概览)
-        * [Collection](#collection)
-        * [Map](#map)
-    * [二、容器中的设计模式](#二容器中的设计模式)
-        * [迭代器模式](#迭代器模式)
-        * [适配器模式](#适配器模式)
-    * [三、源码分析](#三源码分析)
-        * [ArrayList](#arraylist)
-        * [Vector](#vector)
-        * [CopyOnWriteArrayList](#copyonwritearraylist)
-        * [LinkedList](#linkedlist)
-        * [HashMap](#hashmap)
-        * [ConcurrentHashMap](#concurrenthashmap)
-        * [LinkedHashMap](#linkedhashmap)
-        * [WeakHashMap](#weakhashmap)
-    * [参考资料](#参考资料)
-<!-- GFM-TOC -->
-
 
 ## 一、概览
 
@@ -681,11 +657,11 @@ static int indexFor(int h, int length) {
 
 和扩容相关的参数主要有：capacity、size、threshold 和 load_factor。
 
-| 参数 | 含义 |
-| :--: | :-- |
-| capacity | table 的容量大小，默认为 16。需要注意的是 capacity 必须保证为 2 的 n 次方。|
-| size | 键值对数量。 |
-| threshold | size 的临界值，当 size 大于等于 threshold 就必须进行扩容操作。 |
+|     参数     | 含义                                       |
+| :--------: | :--------------------------------------- |
+|  capacity  | table 的容量大小，默认为 16。需要注意的是 capacity 必须保证为 2 的 n 次方。 |
+|    size    | 键值对数量。                                   |
+| threshold  | size 的临界值，当 size 大于等于 threshold 就必须进行扩容操作。 |
 | loadFactor | 装载因子，table 能够使用的比例，threshold = (int)(capacity* loadFactor)。 |
 
 ```java

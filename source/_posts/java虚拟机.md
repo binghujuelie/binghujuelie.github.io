@@ -9,37 +9,7 @@ categories: 基础知识
 description: Java虚拟机笔记
 ---
 
-
 # Java 虚拟机
-<!-- GFM-TOC -->
-* [Java 虚拟机](#java-虚拟机)
-    * [一、运行时数据区域](#一运行时数据区域)
-        * [程序计数器](#程序计数器)
-        * [Java 虚拟机栈](#java-虚拟机栈)
-        * [本地方法栈](#本地方法栈)
-        * [堆](#堆)
-        * [方法区](#方法区)
-        * [运行时常量池](#运行时常量池)
-        * [直接内存](#直接内存)
-    * [二、垃圾收集](#二垃圾收集)
-        * [判断一个对象是否可被回收](#判断一个对象是否可被回收)
-        * [引用类型](#引用类型)
-        * [垃圾收集算法](#垃圾收集算法)
-        * [垃圾收集器](#垃圾收集器)
-    * [三、内存分配与回收策略](#三内存分配与回收策略)
-        * [Minor GC 和 Full GC](#minor-gc-和-full-gc)
-        * [内存分配策略](#内存分配策略)
-        * [Full GC 的触发条件](#full-gc-的触发条件)
-    * [四、类加载机制](#四类加载机制)
-        * [类的生命周期](#类的生命周期)
-        * [类加载过程](#类加载过程)
-        * [类初始化时机](#类初始化时机)
-        * [类与类加载器](#类与类加载器)
-        * [类加载器分类](#类加载器分类)
-        * [双亲委派模型](#双亲委派模型)
-        * [自定义类加载器实现](#自定义类加载器实现)
-    * [参考资料](#参考资料)
-<!-- GFM-TOC -->
 
 本文大部分内容参考   **周志明《深入理解 Java 虚拟机》**  ，想要深入学习的话请看原书。
 
@@ -480,8 +450,8 @@ G1 把堆划分成多个大小相等的独立区域（Region），新生代和�
 -   **准备（Preparation）**  
 -   **解析（Resolution）**  
 -   **初始化（Initialization）**  
-- 使用（Using）
-- 卸载（Unloading）
+-   使用（Using）
+-   卸载（Unloading）
 
 ### 类加载过程
 
@@ -753,7 +723,7 @@ public class FileSystemClassLoader extends ClassLoader {
 - 周志明. 深入理解 Java 虚拟机 [M]. 机械工业出版社, 2011.
 - [Chapter 2. The Structure of the Java Virtual Machine](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5.4)
 - [Jvm memory](https://www.slideshare.net/benewu/jvm-memory)
-[Getting Started with the G1 Garbage Collector](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/G1GettingStarted/index.html)
+  [Getting Started with the G1 Garbage Collector](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/G1GettingStarted/index.html)
 - [JNI Part1: Java Native Interface Introduction and “Hello World” application](http://electrofriends.com/articles/jni/jni-part1-java-native-interface/)
 - [Memory Architecture Of JVM(Runtime Data Areas)](https://hackthejava.wordpress.com/2015/01/09/memory-architecture-by-jvmruntime-data-areas/)
 - [JVM Run-Time Data Areas](https://www.programcreek.com/2013/04/jvm-run-time-data-areas/)

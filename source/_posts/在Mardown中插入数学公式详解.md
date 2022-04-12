@@ -12,6 +12,8 @@ tags:
 mathjax: true
 ---
 
+<!-- toc -->
+
 **本文搬运自**：<https://oysz2016.github.io/post/8611e6fb.html>
 
 ---
@@ -34,20 +36,20 @@ Mathjax 是一款运行在浏览器中的开源数学符号渲染引擎，通过
 
 # 希腊字母
 
-| 显示 | 命令 | 显示 | 命令 |
-| :--: | :--: | :--: | :--: |
-| $\alpha$ | \alpha | $\beta$ | \beta |
-| $\gamma$ | \gamma | $\delta$ | \delta |
-| $\epsilon$ | \epsilon | $\zeta$ | \zeta |
-| $\eta$ | \eta | $\theta$ | \theta |
-| $\iota$ | \iota | $\kappa$ | \kappa |
-| $\lambda$ | \lambda | $\mu$ | \mu |
-| $\nu$ | \nu | $\xi$ | \xi |
-| $\pi$ | \pi | $\rho$ | \rho |
-| $\sigma$ | \sigma | $\tau$ | \tau |
-| $\upsilon$ | \upsilon | $\phi$ | \phi |
-| $\chi$ | \chi | $\psi$ | \psi |
-| $\omega$ | \omega |
+|     显示     |    命令    |    显示    |   命令   |
+| :--------: | :------: | :------: | :----: |
+|  $\alpha$  |  \alpha  | $\beta$  | \beta  |
+|  $\gamma$  |  \gamma  | $\delta$ | \delta |
+| $\epsilon$ | \epsilon | $\zeta$  | \zeta  |
+|   $\eta$   |   \eta   | $\theta$ | \theta |
+|  $\iota$   |  \iota   | $\kappa$ | \kappa |
+| $\lambda$  | \lambda  |  $\mu$   |  \mu   |
+|   $\nu$    |   \nu    |  $\xi$   |  \xi   |
+|   $\pi$    |   \pi    |  $\rho$  |  \rho  |
+|  $\sigma$  |  \sigma  |  $\tau$  |  \tau  |
+| $\upsilon$ | \upsilon |  $\phi$  |  \phi  |
+|   $\chi$   |   \chi   |  $\psi$  |  \psi  |
+|  $\omega$  |  \omega  |          |        |
 - 如果要书写大写希腊字母，只需要将命令首字母大写即可。
   - 例如：` $\gamma$ $\Gamma$ `
   - 显示： $\gamma$ $\Gamma$
@@ -58,41 +60,41 @@ Mathjax 是一款运行在浏览器中的开源数学符号渲染引擎，通过
 ---
 
 # 关系运算符
-| 显示 | 命令 | 显示 | 命令 |
-| :--: | :--: | :--: | :--: |
-| $\mid$ | \mid | $\nmid$ | \nmid |
-| $\cdot$ | \cdot | $\leq$ | \leq |
-| $\geq$ | \geq | $\neq$ | \neq |
-| $\approx$ | \approx | $\equiv$ | \equiv |
-| $\prec$ | \prec | $\preceq$ | \preceq |
-| $\succeq$ | \succeq | $\gg$ | \gg |
-| $\sim$ | \sim | $\simeq$ | \simeq |
-| $\asymp$ | \asymp | $\cong$ | \cong |
-| $\doteq$ | \doteq | $\propto$ | \propto |
-| $\models$ | \models | $\parallel$ | \parallel |
-| $\bowtie$ | \bowtie | $\perp$ | \perp |
-| $\circ$ | \circ | $\ast$ | \ast |
-| $\bigodot$ | \bigodot | $\bigotimes$ | \bigotimes |
-| $\bigoplus$ | \bigoplus |
+|     显示      |    命令     |      显示      |     命令     |
+| :---------: | :-------: | :----------: | :--------: |
+|   $\mid$    |   \mid    |   $\nmid$    |   \nmid    |
+|   $\cdot$   |   \cdot   |    $\leq$    |    \leq    |
+|   $\geq$    |   \geq    |    $\neq$    |    \neq    |
+|  $\approx$  |  \approx  |   $\equiv$   |   \equiv   |
+|   $\prec$   |   \prec   |  $\preceq$   |  \preceq   |
+|  $\succeq$  |  \succeq  |    $\gg$     |    \gg     |
+|   $\sim$    |   \sim    |   $\simeq$   |   \simeq   |
+|  $\asymp$   |  \asymp   |   $\cong$    |   \cong    |
+|  $\doteq$   |  \doteq   |  $\propto$   |  \propto   |
+|  $\models$  |  \models  | $\parallel$  | \parallel  |
+|  $\bowtie$  |  \bowtie  |   $\perp$    |   \perp    |
+|   $\circ$   |   \circ   |    $\ast$    |    \ast    |
+| $\bigodot$  | \bigodot  | $\bigotimes$ | \bigotimes |
+| $\bigoplus$ | \bigoplus |              |            |
 
 ---
 
 # 算术运算符
-| 显示 | 命令 | 显示 | 命令 |
-| :--: | :--: | :--: | :--: |
-| $\pm$ | \pm | $\mp$ | \mp |
-| $\times$ | \times | $\ast$ | \ast |
-| $\star$ | \star | $\circ$ | \circ |
-| $\bullet$ | \bullet | $\cdot$ | \cdot |
-| $\div$ | \div | $\sum$ | \sum |
-| $\prod$ | \prod | $\coprod$ | \coprod |
-| $\oplus$ | \oplus | $\bigoplus$ | \bigoplus |
-| $\ominus$ | \ominus | $\otimes$ | \otimes |
-| $\bigotimes$ | \bigotimes | $\oslash$ | \oslash |
-| $\odot$ | \odot | $\bigodot$ | \bigodot |
-| $\diamond$ | \diamond | $\bigtriangleup$ | \bigtriangleup |
-| $\bigtriangledown$ | \bigtriangledown | $\triangleleft$ | \triangleleft |
-| $\triangleright$ | \triangleright | $\bigcirc$ | \bigcirc |
+|         显示         |        命令        |        显示        |       命令       |
+| :----------------: | :--------------: | :--------------: | :------------: |
+|       $\pm$        |       \pm        |      $\mp$       |      \mp       |
+|      $\times$      |      \times      |      $\ast$      |      \ast      |
+|      $\star$       |      \star       |     $\circ$      |     \circ      |
+|     $\bullet$      |     \bullet      |     $\cdot$      |     \cdot      |
+|       $\div$       |       \div       |      $\sum$      |      \sum      |
+|      $\prod$       |      \prod       |    $\coprod$     |    \coprod     |
+|      $\oplus$      |      \oplus      |   $\bigoplus$    |   \bigoplus    |
+|     $\ominus$      |     \ominus      |    $\otimes$     |    \otimes     |
+|    $\bigotimes$    |    \bigotimes    |    $\oslash$     |    \oslash     |
+|      $\odot$       |      \odot       |    $\bigodot$    |    \bigodot    |
+|     $\diamond$     |     \diamond     | $\bigtriangleup$ | \bigtriangleup |
+| $\bigtriangledown$ | \bigtriangledown | $\triangleleft$  | \triangleleft  |
+|  $\triangleright$  |  \triangleright  |    $\bigcirc$    |    \bigcirc    |
 
 ---
 
@@ -168,11 +170,11 @@ Mathjax 是一款运行在浏览器中的开源数学符号渲染引擎，通过
   \end{matrix}$$
   ```
   - 显示为：
-  $$\begin{matrix}
-  1&0&0\\
-  0&1&0\\
-  0&0&1\\
-  \end{matrix}$$
+    $$\begin{matrix}
+    1&0&0\\
+    0&1&0\\
+    0&0&1\\
+    \end{matrix}$$
 ## 矩阵边框
 - 在起始、结束标记处用下列关键字替换matrix
   - pmatrix：小括号边框
@@ -192,12 +194,12 @@ Mathjax 是一款运行在浏览器中的开源数学符号渲染引擎，通过
   \end{bmatrix}$$
   ```
   - 显示为：
-  $$\begin{bmatrix}
-  {a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
-  {a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
-  {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
-  {a_{m1}}&{a_{m2}}&{\cdots}&{a_{mn}}\\
-  \end{bmatrix}$$
+    $$\begin{bmatrix}
+    {a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
+    {a_{21}}&{a_{22}}&{\cdots}&{a_{2n}}\\
+    {\vdots}&{\vdots}&{\ddots}&{\vdots}\\
+    {a_{m1}}&{a_{m2}}&{\cdots}&{a_{mn}}\\
+    \end{bmatrix}$$
 
 ---
 
@@ -212,19 +214,19 @@ Mathjax 是一款运行在浏览器中的开源数学符号渲染引擎，通过
   \end{cases}$$
   ```
   - 显示为：
-  $$\begin{cases}
-  a_1x+b_1y+c_1z=d_1\\
-  a_2x+b_2y+c_2z=d_2\\
-  a_3x+b_3y+c_3z=d_3\\
-  \end{cases}$$
+    $$\begin{cases}
+    a_1x+b_1y+c_1z=d_1\\
+    a_2x+b_2y+c_2z=d_2\\
+    a_3x+b_3y+c_3z=d_3\\
+    \end{cases}$$
 
 ---
 
 # 公式编号
 - 使用`\tag{n}`标签。
-**注意：标签经测试不适用于inline型公式**
+  **注意：标签经测试不适用于inline型公式**
   - 例如：`f(x)=x\tag{1}`显示为
-  $$ f(x)=x \tag{1} $$
+    $$ f(x)=x \tag{1} $$
 
 ---
 
