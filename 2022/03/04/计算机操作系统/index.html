@@ -53,9 +53,9 @@
 <meta property="og:image" content="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/47d98583-8bb0-45cc-812d-47eefa0a4a40.jpg">
 <meta property="og:image" content="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/76dc7769-1aac-4888-9bea-064f1caa8e77.jpg">
 <meta property="article:published_time" content="2022-03-04T09:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-12T07:03:45.851Z">
+<meta property="article:modified_time" content="2022-04-12T07:30:30.263Z">
 <meta property="article:author" content="binghujuelie">
-<meta property="article:tag" content="教程">
+<meta property="article:tag" content="计算机基础">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://binghujuelie.github.io/img/OperatingSystem/example1.png">
@@ -264,7 +264,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-12 15:03:45" itemprop="dateModified" datetime="2022-04-12T15:03:45+08:00">2022-04-12</time>
+                <time title="修改时间：2022-04-12 15:30:30" itemprop="dateModified" datetime="2022-04-12T15:30:30+08:00">2022-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -309,169 +309,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!-- toc -->
-<ul>
-<li><a href="#概述">概述</a><ul>
-<li><a href="#基本特征">基本特征</a><ul>
-<li><a href="#并发">并发</a></li>
-<li><a href="#共享">共享</a></li>
-<li><a href="#虚拟">虚拟</a></li>
-<li><a href="#异步">异步</a></li>
-</ul>
-</li>
-<li><a href="#基本功能">基本功能</a><ul>
-<li><a href="#进程管理">进程管理</a></li>
-<li><a href="#内存管理">内存管理</a></li>
-<li><a href="#文件管理">文件管理</a></li>
-<li><a href="#设备管理">设备管理</a></li>
-</ul>
-</li>
-<li><a href="#系统调用">系统调用</a></li>
-<li><a href="#宏内核和微内核">宏内核和微内核</a><ul>
-<li><a href="#宏内核">宏内核</a></li>
-<li><a href="#微内核">微内核</a></li>
-</ul>
-</li>
-<li><a href="#中断分类">中断分类</a><ul>
-<li><a href="#外中断">外中断</a></li>
-<li><a href="#异常">异常</a></li>
-<li><a href="#陷入">陷入</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#进程管理-1">进程管理</a><ul>
-<li><a href="#进程与线程">进程与线程</a><ul>
-<li><a href="#1-进程">1. 进程</a></li>
-<li><a href="#2-线程">2. 线程</a></li>
-<li><a href="#3-区别">3. 区别</a></li>
-</ul>
-</li>
-<li><a href="#进程状态的切换">进程状态的切换</a></li>
-<li><a href="#进程调度算法">进程调度算法</a><ul>
-<li><a href="#1-批处理系统">1. 批处理系统</a><ul>
-<li><a href="#11-先来先服务-first-come-first-serverdfcfs">1.1 先来先服务 first-come first-serverd（FCFS）</a></li>
-<li><a href="#12-短作业优先-shortest-job-firstsjf">1.2 短作业优先 shortest job first（SJF）</a></li>
-<li><a href="#13-最短剩余时间优先-shortest-remaining-time-nextsrtn">1.3 最短剩余时间优先 shortest remaining time next（SRTN）</a></li>
-</ul>
-</li>
-<li><a href="#2-交互式系统">2. 交互式系统</a><ul>
-<li><a href="#21-时间片轮转">2.1 时间片轮转</a></li>
-<li><a href="#22-优先级调度">2.2 优先级调度</a></li>
-<li><a href="#23-多级反馈队列">2.3 多级反馈队列</a></li>
-</ul>
-</li>
-<li><a href="#3-实时系统">3. 实时系统</a></li>
-</ul>
-</li>
-<li><a href="#进程同步">进程同步</a><ul>
-<li><a href="#1-临界区">1. 临界区</a></li>
-<li><a href="#2-同步与互斥">2. 同步与互斥</a></li>
-<li><a href="#3-信号量">3. 信号量</a></li>
-<li><a href="#4-管程">4. 管程</a></li>
-</ul>
-</li>
-<li><a href="#经典同步问题">经典同步问题</a><ul>
-<li><a href="#1-哲学家进餐问题">1. 哲学家进餐问题</a></li>
-<li><a href="#2-读者-写者问题">2. 读者-写者问题</a></li>
-</ul>
-</li>
-<li><a href="#进程通信ipc">进程通信(IPC)</a><ul>
-<li><a href="#1-管道">1. 管道</a></li>
-<li><a href="#2-fifo">2. FIFO</a></li>
-<li><a href="#3-消息队列">3. 消息队列</a></li>
-<li><a href="#4-信号量">4. 信号量</a></li>
-<li><a href="#5-共享存储">5. 共享存储</a></li>
-<li><a href="#6-套接字">6. 套接字</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#计算机操作系统-死锁">计算机操作系统 - 死锁</a><ul>
-<li><a href="#必要条件">必要条件</a></li>
-<li><a href="#处理方法">处理方法</a></li>
-<li><a href="#鸵鸟策略">鸵鸟策略</a></li>
-<li><a href="#死锁检测与死锁恢复">死锁检测与死锁恢复</a><ul>
-<li><a href="#1-每种类型一个资源的死锁检测">1. 每种类型一个资源的死锁检测</a></li>
-<li><a href="#2-每种类型多个资源的死锁检测">2. 每种类型多个资源的死锁检测</a></li>
-<li><a href="#3-死锁恢复">3. 死锁恢复</a></li>
-</ul>
-</li>
-<li><a href="#死锁预防">死锁预防</a><ul>
-<li><a href="#1-破坏互斥条件">1. 破坏互斥条件</a></li>
-<li><a href="#2-破坏占有和等待条件">2. 破坏占有和等待条件</a></li>
-<li><a href="#3-破坏不可抢占条件">3. 破坏不可抢占条件</a></li>
-<li><a href="#4-破坏环路等待">4. 破坏环路等待</a></li>
-</ul>
-</li>
-<li><a href="#死锁避免">死锁避免</a><ul>
-<li><a href="#1-安全状态">1. 安全状态</a></li>
-<li><a href="#2-单个资源的银行家算法">2. 单个资源的银行家算法</a></li>
-<li><a href="#3-多个资源的银行家算法">3. 多个资源的银行家算法</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#内存管理-1">内存管理</a><ul>
-<li><a href="#虚拟内存">虚拟内存</a></li>
-<li><a href="#分页系统地址映射">分页系统地址映射</a></li>
-<li><a href="#页面置换算法">页面置换算法</a><ul>
-<li><a href="#1-最佳">1. 最佳</a></li>
-<li><a href="#2-最近最久未使用">2. 最近最久未使用</a></li>
-<li><a href="#3-最近未使用">3. 最近未使用</a></li>
-<li><a href="#4-先进先出">4. 先进先出</a></li>
-<li><a href="#5-第二次机会算法">5. 第二次机会算法</a></li>
-<li><a href="#6-时钟">6. 时钟</a></li>
-</ul>
-</li>
-<li><a href="#分段">分段</a></li>
-<li><a href="#段页式">段页式</a></li>
-<li><a href="#分页与分段的比较">分页与分段的比较</a></li>
-</ul>
-</li>
-<li><a href="#设备管理-1">设备管理</a><ul>
-<li><a href="#磁盘结构">磁盘结构</a></li>
-<li><a href="#磁盘调度算法">磁盘调度算法</a><ul>
-<li><a href="#1-先来先服务">1. 先来先服务</a></li>
-<li><a href="#2-最短寻道时间优先">2. 最短寻道时间优先</a></li>
-<li><a href="#3-电梯算法">3. 电梯算法</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#链接">链接</a><ul>
-<li><a href="#编译系统">编译系统</a></li>
-<li><a href="#静态链接">静态链接</a></li>
-<li><a href="#目标文件">目标文件</a></li>
-<li><a href="#动态链接">动态链接</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-<h1><span id="概述">概述</span></h1><p><a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E6%A6%82%E8%BF%B0.md">参考教程</a></p>
-<h2><span id="基本特征">基本特征</span></h2><h3><span id="并发">并发</span></h3><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes/blob/master/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20-%20%E6%A6%82%E8%BF%B0.md">参考教程</a></p>
+<h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>并发是指宏观上在一段时间内能同时运行多个程序，而并行则指同一时刻能运行多个指令。</p>
 <p>并行需要硬件支持，如多流水线、多核处理器或者分布式计算系统。</p>
 <p>操作系统通过引入进程和线程，使得程序能够并发运行。</p>
 <div class="note info simple">
             <p>进程与线程的区别</p>
           </div>
-<h3><span id="共享">共享</span></h3><p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
+<h3 id="共享"><a href="#共享" class="headerlink" title="共享"></a>共享</h3><p>共享是指系统中的资源可以被多个并发进程共同使用。</p>
 <p>有两种共享方式：互斥共享和同时共享。</p>
 <p>互斥共享的资源称为临界资源，例如打印机等，在同一时刻只允许一个进程访问，需要用同步机制来实现互斥访问。</p>
-<h3><span id="虚拟">虚拟</span></h3><p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
+<h3 id="虚拟"><a href="#虚拟" class="headerlink" title="虚拟"></a>虚拟</h3><p>虚拟技术把一个物理实体转换为多个逻辑实体。</p>
 <p>主要有两种虚拟技术：时（时间）分复用技术和空（空间）分复用技术。</p>
 <p>多个进程能在同一个处理器上并发执行使用了时分复用技术，让每个进程轮流占用处理器，每次只执行一小个时间片并快速切换。</p>
 <p>虚拟内存使用了空分复用技术，它将物理内存抽象为地址空间，每个进程都有各自的地址空间。地址空间的页被映射到物理内存，地址空间的页并不需要全部在物理内存中，当使用到一个没有在物理内存的页时，执行页面置换算法，将该页置换到内存中。</p>
 <div class="note info simple">
             <p>内存要存储页表</p>
           </div>
-<h3><span id="异步">异步</span></h3><p>异步指进程不是一次性执行完毕，而是走走停停，以不可知的速度向前推进。</p>
-<h2><span id="基本功能">基本功能</span></h2><h3><span id="进程管理">进程管理</span></h3><p>进程控制、进程同步、进程通信、死锁处理、处理机调度等。</p>
-<h3><span id="内存管理">内存管理</span></h3><p>内存分配、地址映射、内存保护与共享、虚拟内存等。</p>
-<h3><span id="文件管理">文件管理</span></h3><p>文件存储空间的管理、目录管理、文件读写管理和保护等。</p>
-<h3><span id="设备管理">设备管理</span></h3><p>完成用户的 I/O 请求，方便用户使用各种设备，并提高设备的利用率。</p>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步指进程不是一次性执行完毕，而是走走停停，以不可知的速度向前推进。</p>
+<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><p>进程控制、进程同步、进程通信、死锁处理、处理机调度等。</p>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>内存分配、地址映射、内存保护与共享、虚拟内存等。</p>
+<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><p>文件存储空间的管理、目录管理、文件读写管理和保护等。</p>
+<h3 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h3><p>完成用户的 I/O 请求，方便用户使用各种设备，并提高设备的利用率。</p>
 <p>主要包括缓冲管理、设备分配、设备处理、虛拟设备等。</p>
-<h2><span id="系统调用">系统调用</span></h2><p><img src="/img/OperatingSystem/example1.png" alt></p>
+<h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p><img src="/img/OperatingSystem/example1.png" alt=""></p>
 <p>Linux 的系统调用主要有以下这些：</p>
 <div class="table-container">
 <table>
@@ -509,23 +370,23 @@
 </tbody>
 </table>
 </div>
-<h2><span id="宏内核和微内核">宏内核和微内核</span></h2><h3><span id="宏内核">宏内核</span></h3><p>宏内核是将操作系统功能作为一个紧密结合的整体放到内核。</p>
+<h2 id="宏内核和微内核"><a href="#宏内核和微内核" class="headerlink" title="宏内核和微内核"></a>宏内核和微内核</h2><h3 id="宏内核"><a href="#宏内核" class="headerlink" title="宏内核"></a>宏内核</h3><p>宏内核是将操作系统功能作为一个紧密结合的整体放到内核。</p>
 <p>由于各模块共享信息，因此有很高的性能。</p>
-<h3><span id="微内核">微内核</span></h3><p>由于操作系统不断复杂，因此将一部分操作系统功能移出内核，从而降低内核的复杂性。移出的部分根据分层的原则划分成若干服务，相互独立。</p>
+<h3 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h3><p>由于操作系统不断复杂，因此将一部分操作系统功能移出内核，从而降低内核的复杂性。移出的部分根据分层的原则划分成若干服务，相互独立。</p>
 <p>在微内核结构下，操作系统被划分成小的、定义良好的模块，只有微内核这一个模块运行在内核态，其余模块运行在用户态。</p>
 <p>因为需要频繁地在用户态和核心态之间进行切换，所以会有一定的性能损失。</p>
-<p><img src="/img/OperatingSystem/example2.png" alt></p>
-<h2><span id="中断分类">中断分类</span></h2><h3><span id="外中断">外中断</span></h3><p>由 CPU 执行指令以外的事件引起，如 I/O 完成中断，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。此外还有时钟中断、控制台中断等。</p>
-<h3><span id="异常">异常</span></h3><p>由 CPU 执行指令的内部事件引起，如非法操作码、地址越界、算术溢出等。</p>
-<h3><span id="陷入">陷入</span></h3><p>在用户程序中使用系统调用。</p>
-<h1><span id="进程管理">进程管理</span></h1><h2><span id="进程与线程">进程与线程</span></h2><h3><span id="1-进程">1. 进程</span></h3><p>进程是资源分配的基本单位。</p>
+<p><img src="/img/OperatingSystem/example2.png" alt=""></p>
+<h2 id="中断分类"><a href="#中断分类" class="headerlink" title="中断分类"></a>中断分类</h2><h3 id="外中断"><a href="#外中断" class="headerlink" title="外中断"></a>外中断</h3><p>由 CPU 执行指令以外的事件引起，如 I/O 完成中断，表示设备输入/输出处理已经完成，处理器能够发送下一个输入/输出请求。此外还有时钟中断、控制台中断等。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>由 CPU 执行指令的内部事件引起，如非法操作码、地址越界、算术溢出等。</p>
+<h3 id="陷入"><a href="#陷入" class="headerlink" title="陷入"></a>陷入</h3><p>在用户程序中使用系统调用。</p>
+<h1 id="进程管理-1"><a href="#进程管理-1" class="headerlink" title="进程管理"></a>进程管理</h1><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><h3 id="1-进程"><a href="#1-进程" class="headerlink" title="1. 进程"></a>1. 进程</h3><p>进程是资源分配的基本单位。</p>
 <p>进程控制块 (Process Control Block, PCB) 描述进程的基本信息和运行状态，所谓的创建进程和撤销进程，都是指对 PCB 的操作。</p>
 <p>下图显示了 4 个程序创建了 4 个进程，这 4 个进程可以并发地执行。</p>
-<p><img src="/img/OperatingSystem/example3.png" alt></p>
-<h3><span id="2-线程">2. 线程</span></h3><p>线程是独立调度的基本单位。</p>
+<p><img src="/img/OperatingSystem/example3.png" alt=""></p>
+<h3 id="2-线程"><a href="#2-线程" class="headerlink" title="2. 线程"></a>2. 线程</h3><p>线程是独立调度的基本单位。</p>
 <p>一个进程中可以有多个线程，它们共享进程资源。</p>
 <p>QQ 和浏览器是两个进程，浏览器进程里面有很多线程，例如 HTTP 请求线程、事件响应线程、渲染线程等等，线程的并发执行使得在浏览器中点击一个新链接从而发起 HTTP 请求时，浏览器还可以响应用户的其它事件。</p>
-<h3><span id="3-区别">3. 区别</span></h3><p>Ⅰ 拥有资源</p>
+<h3 id="3-区别"><a href="#3-区别" class="headerlink" title="3. 区别"></a>3. 区别</h3><p>Ⅰ 拥有资源</p>
 <p>进程是资源分配的基本单位，但是线程不拥有资源，线程可以访问隶属进程的资源。</p>
 <p>Ⅱ 调度</p>
 <p>线程是独立调度的基本单位，在同一进程中，线程的切换不会引起进程切换，从一个进程中的线程切换到另一个进程中的线程时，会引起进程切换。</p>
@@ -533,7 +394,7 @@
 <p>由于创建或撤销进程时，系统都要为之分配或回收资源，如内存空间、I/O 设备等，所付出的开销远大于创建或撤销线程时的开销。类似地，在进行进程切换时，涉及当前执行进程 CPU 环境的保存及新调度进程 CPU 环境的设置，而线程切换时只需保存和设置少量寄存器内容，开销很小。</p>
 <p>Ⅳ 通信方面</p>
 <p>线程间可以通过直接读写同一进程中的数据进行通信，但是进程通信需要借助 IPC(进程间通信，interprocess communication)。</p>
-<h2><span id="进程状态的切换">进程状态的切换</span></h2><p><img src="/img/OperatingSystem/example4.png" alt></p>
+<h2 id="进程状态的切换"><a href="#进程状态的切换" class="headerlink" title="进程状态的切换"></a>进程状态的切换</h2><p><img src="/img/OperatingSystem/example4.png" alt=""></p>
 <ul>
 <li>就绪状态（ready）：等待被调度</li>
 <li>运行状态（running）</li>
@@ -544,34 +405,34 @@
 <li>只有就绪态和运行态可以相互转换，其它的都是单向转换。就绪状态的进程通过调度算法从而获得 CPU 时间，转为运行状态；而运行状态的进程，在分配给它的 CPU 时间片用完之后就会转为就绪状态，等待下一次调度。</li>
 <li>阻塞状态是缺少需要的资源从而由运行状态转换而来，但是该资源不包括 CPU 时间，缺少 CPU 时间会从运行态转换为就绪态。</li>
 </ul>
-<h2><span id="进程调度算法">进程调度算法</span></h2><p>不同环境的调度算法目标不同，因此需要针对不同环境来讨论调度算法。</p>
-<h3><span id="1-批处理系统">1. 批处理系统</span></h3><p>批处理系统没有太多的用户操作，在该系统中，调度算法目标是保证吞吐量和周转时间（从提交到终止的时间）。</p>
-<h4><span id="11-先来先服务-first-come-first-serverdfcfs">1.1 先来先服务 first-come first-serverd（FCFS）</span></h4><p>非抢占式的调度算法，按照请求的顺序进行调度。</p>
+<h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><p>不同环境的调度算法目标不同，因此需要针对不同环境来讨论调度算法。</p>
+<h3 id="1-批处理系统"><a href="#1-批处理系统" class="headerlink" title="1. 批处理系统"></a>1. 批处理系统</h3><p>批处理系统没有太多的用户操作，在该系统中，调度算法目标是保证吞吐量和周转时间（从提交到终止的时间）。</p>
+<h4 id="1-1-先来先服务-first-come-first-serverd（FCFS）"><a href="#1-1-先来先服务-first-come-first-serverd（FCFS）" class="headerlink" title="1.1 先来先服务 first-come first-serverd（FCFS）"></a>1.1 先来先服务 first-come first-serverd（FCFS）</h4><p>非抢占式的调度算法，按照请求的顺序进行调度。</p>
 <p>有利于长作业，但不利于短作业，因为短作业必须一直等待前面的长作业执行完毕才能执行，而长作业又需要执行很长时间，造成了短作业等待时间过长。</p>
-<h4><span id="12-短作业优先-shortest-job-firstsjf">1.2 短作业优先 shortest job first（SJF）</span></h4><p>非抢占式的调度算法，按估计运行时间最短的顺序进行调度。</p>
+<h4 id="1-2-短作业优先-shortest-job-first（SJF）"><a href="#1-2-短作业优先-shortest-job-first（SJF）" class="headerlink" title="1.2 短作业优先 shortest job first（SJF）"></a>1.2 短作业优先 shortest job first（SJF）</h4><p>非抢占式的调度算法，按估计运行时间最短的顺序进行调度。</p>
 <p>长作业有可能会饿死，处于一直等待短作业执行完毕的状态。因为如果一直有短作业到来，那么长作业永远得不到调度。</p>
-<h4><span id="13-最短剩余时间优先-shortest-remaining-time-nextsrtn">1.3 最短剩余时间优先 shortest remaining time next（SRTN）</span></h4><p>最短作业优先的抢占式版本，按剩余运行时间的顺序进行调度。 当一个新的作业到达时，其整个运行时间与当前进程的剩余时间作比较。如果新的进程需要的时间更少，则挂起当前进程，运行新的进程。否则新的进程等待。</p>
-<h3><span id="2-交互式系统">2. 交互式系统</span></h3><p>交互式系统有大量的用户交互操作，在该系统中调度算法的目标是快速地进行响应。</p>
-<h4><span id="21-时间片轮转">2.1 时间片轮转</span></h4><p>将所有就绪进程按 FCFS 的原则排成一个队列，每次调度时，把 CPU 时间分配给队首进程，该进程可以执行一个时间片。当时间片用完时，由计时器发出时钟中断，调度程序便停止该进程的执行，并将它送往就绪队列的末尾，同时继续把 CPU 时间分配给队首的进程。</p>
+<h4 id="1-3-最短剩余时间优先-shortest-remaining-time-next（SRTN）"><a href="#1-3-最短剩余时间优先-shortest-remaining-time-next（SRTN）" class="headerlink" title="1.3 最短剩余时间优先 shortest remaining time next（SRTN）"></a>1.3 最短剩余时间优先 shortest remaining time next（SRTN）</h4><p>最短作业优先的抢占式版本，按剩余运行时间的顺序进行调度。 当一个新的作业到达时，其整个运行时间与当前进程的剩余时间作比较。如果新的进程需要的时间更少，则挂起当前进程，运行新的进程。否则新的进程等待。</p>
+<h3 id="2-交互式系统"><a href="#2-交互式系统" class="headerlink" title="2. 交互式系统"></a>2. 交互式系统</h3><p>交互式系统有大量的用户交互操作，在该系统中调度算法的目标是快速地进行响应。</p>
+<h4 id="2-1-时间片轮转"><a href="#2-1-时间片轮转" class="headerlink" title="2.1 时间片轮转"></a>2.1 时间片轮转</h4><p>将所有就绪进程按 FCFS 的原则排成一个队列，每次调度时，把 CPU 时间分配给队首进程，该进程可以执行一个时间片。当时间片用完时，由计时器发出时钟中断，调度程序便停止该进程的执行，并将它送往就绪队列的末尾，同时继续把 CPU 时间分配给队首的进程。</p>
 <p>时间片轮转算法的效率和时间片的大小有很大关系：</p>
 <p>因为进程切换都要保存进程的信息并且载入新进程的信息，如果时间片太小，会导致进程切换得太频繁，在进程切换上就会花过多时间。<br>而如果时间片过长，那么实时性就不能得到保证。</p>
-<h4><span id="22-优先级调度">2.2 优先级调度</span></h4><p>为每个进程分配一个优先级，按优先级进行调度。</p>
+<h4 id="2-2-优先级调度"><a href="#2-2-优先级调度" class="headerlink" title="2.2 优先级调度"></a>2.2 优先级调度</h4><p>为每个进程分配一个优先级，按优先级进行调度。</p>
 <p>为了防止低优先级的进程永远等不到调度，可以随着时间的推移增加等待进程的优先级。</p>
-<h4><span id="23-多级反馈队列">2.3 多级反馈队列</span></h4><p>一个进程需要执行 100 个时间片，如果采用时间片轮转调度算法，那么需要交换 100 次。</p>
+<h4 id="2-3-多级反馈队列"><a href="#2-3-多级反馈队列" class="headerlink" title="2.3 多级反馈队列"></a>2.3 多级反馈队列</h4><p>一个进程需要执行 100 个时间片，如果采用时间片轮转调度算法，那么需要交换 100 次。</p>
 <p>多级队列是为这种需要连续执行多个时间片的进程考虑，它设置了多个队列，每个队列时间片大小都不同，例如 1,2,4,8,..。进程在第一个队列没执行完，就会被移到下一个队列。这种方式下，之前的进程只需要交换 7 次。</p>
 <p>每个队列优先权也不同，最上面的优先权最高。因此只有上一个队列没有进程在排队，才能调度当前队列上的进程。</p>
 <p>可以将这种调度算法看成是时间片轮转调度算法和优先级调度算法的结合。</p>
-<p><img src="/img/OperatingSystem/example5.png" alt></p>
-<h3><span id="3-实时系统">3. 实时系统</span></h3><p>实时系统要求一个请求在一个确定时间内得到响应。</p>
+<p><img src="/img/OperatingSystem/example5.png" alt=""></p>
+<h3 id="3-实时系统"><a href="#3-实时系统" class="headerlink" title="3. 实时系统"></a>3. 实时系统</h3><p>实时系统要求一个请求在一个确定时间内得到响应。</p>
 <p>分为硬实时和软实时，前者必须满足绝对的截止时间，后者可以容忍一定的超时。</p>
-<h2><span id="进程同步">进程同步</span></h2><h3><span id="1-临界区">1. 临界区</span></h3><p>对临界资源进行访问的那段代码称为临界区。</p>
+<h2 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h2><h3 id="1-临界区"><a href="#1-临界区" class="headerlink" title="1. 临界区"></a>1. 临界区</h3><p>对临界资源进行访问的那段代码称为临界区。</p>
 <p>为了互斥访问临界资源，每个进程在进入临界区之前，需要先进行检查。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// entry section<br>// critical section;<br>// exit section<br></code></pre></td></tr></table></figure>
-<h3><span id="2-同步与互斥">2. 同步与互斥</span></h3><ul>
+<h3 id="2-同步与互斥"><a href="#2-同步与互斥" class="headerlink" title="2. 同步与互斥"></a>2. 同步与互斥</h3><ul>
 <li>同步：多个进程因为合作产生的直接制约关系，使得进程有一定的先后执行关系。</li>
 <li>互斥：多个进程在同一时刻只有一个进程能进入临界区。</li>
 </ul>
-<h3><span id="3-信号量">3. 信号量</span></h3><p>信号量（Semaphore）是一个整型变量，可以对其执行 down 和 up 操作，也就是常见的 P 和 V 操作。</p>
+<h3 id="3-信号量"><a href="#3-信号量" class="headerlink" title="3. 信号量"></a>3. 信号量</h3><p>信号量（Semaphore）是一个整型变量，可以对其执行 down 和 up 操作，也就是常见的 P 和 V 操作。</p>
 <p>down : 如果信号量大于 0 ，执行 -1 操作；如果信号量等于 0，进程睡眠，等待信号量大于 0；<br>up ：对信号量执行 +1 操作，唤醒睡眠的进程让其完成 down 操作。<br>down 和 up 操作需要被设计成原语，不可分割，通常的做法是在执行这些操作的时候屏蔽中断。</p>
 <p>如果信号量的取值只能为 0 或者 1，那么就成为了 <code>互斥量（Mutex）</code> ，0 表示临界区已经加锁，1 表示临界区解锁。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> semaphore;<br>semaphore mutex = <span class="hljs-number">1</span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P1</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">down</span>(&amp;mutex);<br>    <span class="hljs-comment">// 临界区</span><br>    <span class="hljs-built_in">up</span>(&amp;mutex);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">P2</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">down</span>(&amp;mutex);<br>    <span class="hljs-comment">// 临界区</span><br>    <span class="hljs-built_in">up</span>(&amp;mutex);<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -581,14 +442,14 @@
 <p>为了同步生产者和消费者的行为，需要记录缓冲区中物品的数量。数量可以使用信号量来进行统计，这里需要使用两个信号量：empty 记录空缓冲区的数量，full 记录满缓冲区的数量。其中，empty 信号量是在生产者进程中使用，当 empty 不为 0 时，生产者才可以放入物品；full 信号量是在消费者进程中使用，当 full 信号量不为 0 时，消费者才可以取走物品。</p>
 <p>注意，不能先对缓冲区进行加锁，再测试信号量。也就是说，不能先执行 down(mutex) 再执行 down(empty)。如果这么做了，那么可能会出现这种情况：生产者对缓冲区加锁后，执行 down(empty) 操作，发现 empty = 0，此时生产者睡眠。消费者不能进入临界区，因为生产者对缓冲区加锁了，消费者就无法执行 up(empty) 操作，empty 永远都为 0，导致生产者永远等待下，不会释放锁，消费者因此也会永远等待下去。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">define</span> N 100</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> semaphore;<br>semaphore mutex = <span class="hljs-number">1</span>;<br>semaphore empty = N;<br>semaphore full = <span class="hljs-number">0</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">producer</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">while</span>(TRUE) &#123;<br>        <span class="hljs-type">int</span> item = <span class="hljs-built_in">produce_item</span>();<br>        <span class="hljs-built_in">down</span>(&amp;empty);<br>        <span class="hljs-built_in">down</span>(&amp;mutex);<br>        <span class="hljs-built_in">insert_item</span>(item);<br>        <span class="hljs-built_in">up</span>(&amp;mutex);<br>        <span class="hljs-built_in">up</span>(&amp;full);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">consumer</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">while</span>(TRUE) &#123;<br>        <span class="hljs-built_in">down</span>(&amp;full);<br>        <span class="hljs-built_in">down</span>(&amp;mutex);<br>        <span class="hljs-type">int</span> item = <span class="hljs-built_in">remove_item</span>();<br>        <span class="hljs-built_in">consume_item</span>(item);<br>        <span class="hljs-built_in">up</span>(&amp;mutex);<br>        <span class="hljs-built_in">up</span>(&amp;empty);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3><span id="4-管程">4. 管程</span></h3><p>使用信号量机制实现的生产者消费者问题需要客户端代码做很多控制，而管程把控制的代码独立出来，不仅不容易出错，也使得客户端代码调用更容易。</p>
+<h3 id="4-管程"><a href="#4-管程" class="headerlink" title="4. 管程"></a>4. 管程</h3><p>使用信号量机制实现的生产者消费者问题需要客户端代码做很多控制，而管程把控制的代码独立出来，不仅不容易出错，也使得客户端代码调用更容易。</p>
 <p>c 语言不支持管程，下面的示例代码使用了 <code>类 Pascal</code>语言来描述管程。示例代码的管程提供了 <code>insert()</code>和 <code>remove()</code> 方法，客户端代码通过调用这两个方法来解决生产者-消费者问题。</p>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs pascal">monitor ProducerConsumer<br>    integer i;<br>    condition c;<br><br>    <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">insert</span><span class="hljs-params">()</span>;</span><br>    <span class="hljs-keyword">begin</span><br>        <span class="hljs-comment">// ...</span><br>    <span class="hljs-keyword">end</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">remove</span><span class="hljs-params">()</span>;</span><br>    <span class="hljs-keyword">begin</span><br>        <span class="hljs-comment">// ...</span><br>    <span class="hljs-keyword">end</span>;<br><span class="hljs-keyword">end</span> monitor;<br></code></pre></td></tr></table></figure>
 <p>管程有一个重要特性：在一个时刻只能有一个进程使用管程。进程在无法继续执行的时候不能一直占用管程，否则其它进程永远不能使用管程。</p>
 <p>管程引入了 条件变量 以及相关的操作：<code>wait()</code>和 <code>signal()</code>来实现同步操作。对条件变量执行 <code>wait()</code> 操作会导致调用进程阻塞，把管程让出来给另一个进程持有。<code>signal()</code> 操作用于唤醒被阻塞的进程。</p>
 <p>使用管程实现生产者-消费者问题</p>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs pascal"><span class="hljs-comment">// 管程</span><br>monitor ProducerConsumer<br>    condition full, empty;<br>    integer count := <span class="hljs-number">0</span>;<br>    condition c;<br><br>    <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">insert</span><span class="hljs-params">(item: integer)</span>;</span><br>    <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">if</span> count = N <span class="hljs-keyword">then</span> wait(full);<br>        insert_item(item);<br>        count := count + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> count = <span class="hljs-number">1</span> <span class="hljs-keyword">then</span> signal(empty);<br>    <span class="hljs-keyword">end</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>:</span> integer;<br>    <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">if</span> count = <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> wait(empty);<br>        remove = remove_item;<br>        count := count - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> count = N -<span class="hljs-number">1</span> <span class="hljs-keyword">then</span> signal(full);<br>    <span class="hljs-keyword">end</span>;<br><span class="hljs-keyword">end</span> monitor;<br><br><span class="hljs-comment">// 生产者客户端</span><br><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">producer</span></span><br><span class="hljs-function"><span class="hljs-title">begin</span></span><br><span class="hljs-function">    <span class="hljs-title">while</span> <span class="hljs-title">true</span> <span class="hljs-title">do</span></span><br><span class="hljs-function">    <span class="hljs-title">begin</span></span><br><span class="hljs-function">        <span class="hljs-title">item</span> = <span class="hljs-title">produce_item</span>;</span><br>        ProducerConsumer.insert(item);<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span>;<br><br><span class="hljs-comment">// 消费者客户端</span><br><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">consumer</span></span><br><span class="hljs-function"><span class="hljs-title">begin</span></span><br><span class="hljs-function">    <span class="hljs-title">while</span> <span class="hljs-title">true</span> <span class="hljs-title">do</span></span><br><span class="hljs-function">    <span class="hljs-title">begin</span></span><br><span class="hljs-function">        <span class="hljs-title">item</span> = <span class="hljs-title">ProducerConsumer</span>.<span class="hljs-title">remove</span>;</span><br>        consume_item(item);<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span>;<br></code></pre></td></tr></table></figure>
-<h2><span id="经典同步问题">经典同步问题</span></h2><h3><span id="1-哲学家进餐问题">1. 哲学家进餐问题</span></h3><p>五个哲学家围着一张圆桌，每个哲学家面前放着食物。哲学家的生活有两种交替活动：吃饭以及思考。当一个哲学家吃饭时，需要先拿起自己左右两边的两根筷子，并且一次只能拿起一根筷子。</p>
+<h2 id="经典同步问题"><a href="#经典同步问题" class="headerlink" title="经典同步问题"></a>经典同步问题</h2><h3 id="1-哲学家进餐问题"><a href="#1-哲学家进餐问题" class="headerlink" title="1. 哲学家进餐问题"></a>1. 哲学家进餐问题</h3><p>五个哲学家围着一张圆桌，每个哲学家面前放着食物。哲学家的生活有两种交替活动：吃饭以及思考。当一个哲学家吃饭时，需要先拿起自己左右两边的两根筷子，并且一次只能拿起一根筷子。</p>
 <p>下面是一种错误的解法，如果所有哲学家同时拿起左手边的筷子，那么所有哲学家都在等待其它哲学家吃完并释放自己手中的筷子，导致死锁。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> N 5</span><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">philosopher</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>    <span class="hljs-keyword">while</span>(TRUE) &#123;<br>        think();<br>        take(i);       <span class="hljs-comment">// 拿起左边的筷子</span><br>        take((i+<span class="hljs-number">1</span>)%N); <span class="hljs-comment">// 拿起右边的筷子</span><br>        eat();<br>        put(i);<br>        put((i+<span class="hljs-number">1</span>)%N);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>为了防止死锁的发生，可以设置两个条件：</p>
@@ -597,64 +458,64 @@
 <li>只有在两个邻居都没有进餐的情况下才允许进餐。</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> N 5</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LEFT (i + N - 1) % N <span class="hljs-comment">// 左邻居</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> RIGHT (i + 1) % N    <span class="hljs-comment">// 右邻居</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> THINKING 0</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> HUNGRY   1</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> EATING   2</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> semaphore;<br><span class="hljs-type">int</span> state[N];                <span class="hljs-comment">// 跟踪每个哲学家的状态</span><br>semaphore mutex = <span class="hljs-number">1</span>;         <span class="hljs-comment">// 临界区的互斥，临界区是 state 数组，对其修改需要互斥</span><br>semaphore s[N];              <span class="hljs-comment">// 每个哲学家一个信号量</span><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">philosopher</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>    <span class="hljs-keyword">while</span>(TRUE) &#123;<br>        think(i);<br>        take_two(i);<br>        eat(i);<br>        put_two(i);<br>    &#125;<br>&#125;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">take_two</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>    down(&amp;mutex);<br>    state[i] = HUNGRY;<br>    check(i);<br>    up(&amp;mutex);<br>    down(&amp;s[i]); <span class="hljs-comment">// 只有收到通知之后才可以开始吃，否则会一直等下去</span><br>&#125;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">put_two</span><span class="hljs-params">(i)</span> &#123;<br>    down(&amp;mutex);<br>    state[i] = THINKING;<br>    check(LEFT); <span class="hljs-comment">// 尝试通知左右邻居，自己吃完了，你们可以开始吃了</span><br>    check(RIGHT);<br>    up(&amp;mutex);<br>&#125;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">(<span class="hljs-type">int</span> i)</span> &#123;<br>    down(&amp;mutex);<br>    state[i] = EATING;<br>    up(&amp;mutex);<br>&#125;<br><br><span class="hljs-comment">// 检查两个邻居是否都没有用餐，如果是的话，就 up(&amp;s[i])，使得 down(&amp;s[i]) 能够得到通知并继续执行</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">check</span><span class="hljs-params">(i)</span> &#123;       <br>    <span class="hljs-keyword">if</span>(state[i] == HUNGRY &amp;&amp; state[LEFT] != EATING &amp;&amp; state[RIGHT] !=EATING) &#123;<br>        state[i] = EATING;<br>        up(&amp;s[i]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3><span id="2-读者-写者问题">2. 读者-写者问题</span></h3><p>允许多个进程同时对数据进行读操作，但是不允许读和写以及写和写操作同时发生。</p>
+<h3 id="2-读者-写者问题"><a href="#2-读者-写者问题" class="headerlink" title="2. 读者-写者问题"></a>2. 读者-写者问题</h3><p>允许多个进程同时对数据进行读操作，但是不允许读和写以及写和写操作同时发生。</p>
 <p>一个整型变量 count 记录在对数据进行读操作的进程数量，一个互斥量 count_mutex 用于对 count 加锁，一个互斥量 data_mutex 用于对读写的数据加锁。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> semaphore;<br>semaphore count_mutex = <span class="hljs-number">1</span>;<br>semaphore data_mutex = <span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">reader</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">while</span>(TRUE) &#123;<br>        down(&amp;count_mutex);<br>        count++;<br>        <span class="hljs-keyword">if</span>(count == <span class="hljs-number">1</span>) down(&amp;data_mutex); <span class="hljs-comment">// 第一个读者需要对数据进行加锁，防止写进程访问</span><br>        up(&amp;count_mutex);<br>        read();<br>        down(&amp;count_mutex);<br>        count--;<br>        <span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>) up(&amp;data_mutex);<br>        up(&amp;count_mutex);<br>    &#125;<br>&#125;<br><br><span class="hljs-type">void</span> <span class="hljs-title function_">writer</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">while</span>(TRUE) &#123;<br>        down(&amp;data_mutex);<br>        write();<br>        up(&amp;data_mutex);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2><span id="进程通信ipc">进程通信(IPC)</span></h2><p>进程同步与进程通信很容易混淆，它们的区别在于：</p>
+<h2 id="进程通信-IPC"><a href="#进程通信-IPC" class="headerlink" title="进程通信(IPC)"></a>进程通信(IPC)</h2><p>进程同步与进程通信很容易混淆，它们的区别在于：</p>
 <ul>
 <li>进程同步：控制多个进程按一定顺序执行；</li>
 <li>进程通信：进程间传输信息。</li>
 </ul>
 <p>进程通信是一种手段，而进程同步是一种目的。也可以说，为了能够达到进程同步的目的，需要让进程进行通信，传输一些进程同步所需要的信息。</p>
-<h3><span id="1-管道">1. 管道</span></h3><p>管道是通过调用 <code>pipe</code>函数创建的，<code>fd[0]</code> 用于读，<code>fd[1]</code> 用于写。</p>
+<h3 id="1-管道"><a href="#1-管道" class="headerlink" title="1. 管道"></a>1. 管道</h3><p>管道是通过调用 <code>pipe</code>函数创建的，<code>fd[0]</code> 用于读，<code>fd[1]</code> 用于写。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">pipe</span><span class="hljs-params">(<span class="hljs-type">int</span> fd[<span class="hljs-number">2</span>])</span>;<br></code></pre></td></tr></table></figure>
 <p>它具有以下限制：</p>
 <ul>
 <li>只支持半双工通信（单向交替传输）；</li>
 <li>只能在父子进程或者兄弟进程中使用。</li>
 </ul>
-<p><img src="/img/OperatingSystem/example6.png" alt></p>
-<h3><span id="2-fifo">2. FIFO</span></h3><p>也称为命名管道，去除了管道只能在父子进程中使用的限制。</p>
+<p><img src="/img/OperatingSystem/example6.png" alt=""></p>
+<h3 id="2-FIFO"><a href="#2-FIFO" class="headerlink" title="2. FIFO"></a>2. FIFO</h3><p>也称为命名管道，去除了管道只能在父子进程中使用的限制。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;sys/stat.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">mkfifo</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *path, <span class="hljs-type">mode_t</span> mode)</span>;<br><span class="hljs-type">int</span> <span class="hljs-title function_">mkfifoat</span><span class="hljs-params">(<span class="hljs-type">int</span> fd, <span class="hljs-type">const</span> <span class="hljs-type">char</span> *path, <span class="hljs-type">mode_t</span> mode)</span>;<br></code></pre></td></tr></table></figure>
 <p>FIFO 常用于客户-服务器应用程序中，FIFO 用作汇聚点，在客户进程和服务器进程之间传递数据。</p>
-<p><img src="/img/OperatingSystem/example7.png" alt></p>
-<h3><span id="3-消息队列">3. 消息队列</span></h3><p>相比于 FIFO，消息队列具有以下优点：</p>
+<p><img src="/img/OperatingSystem/example7.png" alt=""></p>
+<h3 id="3-消息队列"><a href="#3-消息队列" class="headerlink" title="3. 消息队列"></a>3. 消息队列</h3><p>相比于 FIFO，消息队列具有以下优点：</p>
 <ul>
 <li>消息队列可以独立于读写进程存在，从而避免了 FIFO 中同步管道的打开和关闭时可能产生的困难；</li>
 <li>避免了 FIFO 的同步阻塞问题，不需要进程自己提供同步方法；</li>
 <li>读进程可以根据消息类型有选择地接收消息，而不像 FIFO 那样只能默认地接收。</li>
 </ul>
-<h3><span id="4-信号量">4. 信号量</span></h3><p>它是一个计数器，用于为多个进程提供对共享数据对象的访问。</p>
-<h3><span id="5-共享存储">5. 共享存储</span></h3><p>允许多个进程共享一个给定的存储区。因为数据不需要在进程之间复制，所以这是最快的一种 IPC。</p>
+<h3 id="4-信号量"><a href="#4-信号量" class="headerlink" title="4. 信号量"></a>4. 信号量</h3><p>它是一个计数器，用于为多个进程提供对共享数据对象的访问。</p>
+<h3 id="5-共享存储"><a href="#5-共享存储" class="headerlink" title="5. 共享存储"></a>5. 共享存储</h3><p>允许多个进程共享一个给定的存储区。因为数据不需要在进程之间复制，所以这是最快的一种 IPC。</p>
 <p>需要使用信号量用来同步对共享存储的访问。</p>
 <p>多个进程可以将同一个文件映射到它们的地址空间从而实现共享内存。另外 XSI 共享内存不是使用文件，而是使用内存的匿名段。</p>
 <p>Linux系统中，进程可以通过共享内存实现进程间通信。共享内存主要有两种实现方法：XSI共享存储(通过shmget，shmat，shmdt等函数实现)和内存映射(mmap实现)。两者的主要区别是前者没有相关的文件，共享的是内存匿名段；而后者通常需要指定一个文件路径，调用open函数打开之后实现mmap内存映射。涉及到多个进程共享存储区，就必须有访问控制，这通常通过信号量，记录锁和互斥量实现。下面分别介绍每一种方法的使用细节。</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuanwebpage/p/12422529.html">XSI共享存储和内存映射</a></p>
-<h3><span id="6-套接字">6. 套接字</span></h3><p>与其它通信机制不同的是，它可用于不同机器间的进程通信。</p>
-<h1><span id="计算机操作系统-死锁">计算机操作系统 - 死锁</span></h1><h2><span id="必要条件">必要条件</span></h2><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c037c901-7eae-4e31-a1e4-9d41329e5c3e.png" alt></p>
+<h3 id="6-套接字"><a href="#6-套接字" class="headerlink" title="6. 套接字"></a>6. 套接字</h3><p>与其它通信机制不同的是，它可用于不同机器间的进程通信。</p>
+<h1 id="计算机操作系统-死锁"><a href="#计算机操作系统-死锁" class="headerlink" title="计算机操作系统 - 死锁"></a>计算机操作系统 - 死锁</h1><h2 id="必要条件"><a href="#必要条件" class="headerlink" title="必要条件"></a>必要条件</h2><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c037c901-7eae-4e31-a1e4-9d41329e5c3e.png" alt=""></p>
 <ul>
 <li>互斥：每个资源要么已经分配给了一个进程，要么就是可用的。</li>
 <li>占有和等待：已经得到了某个资源的进程可以再请求新的资源。</li>
 <li>不可抢占：已经分配给一个进程的资源不能强制性地被抢占，它只能被占有它的进程显式地释放。</li>
 <li>环路等待：有两个或者两个以上的进程组成一条环路，该环路中的每个进程都在等待下一个进程所占有的资源。</li>
 </ul>
-<h2><span id="处理方法">处理方法</span></h2><p>主要有以下四种方法：</p>
+<h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h2><p>主要有以下四种方法：</p>
 <ul>
 <li>鸵鸟策略</li>
 <li>死锁检测与死锁恢复</li>
 <li>死锁预防</li>
 <li>死锁避免</li>
 </ul>
-<h2><span id="鸵鸟策略">鸵鸟策略</span></h2><p>把头埋在沙子里，假装根本没发生问题。</p>
+<h2 id="鸵鸟策略"><a href="#鸵鸟策略" class="headerlink" title="鸵鸟策略"></a>鸵鸟策略</h2><p>把头埋在沙子里，假装根本没发生问题。</p>
 <p>因为解决死锁问题的代价很高，因此鸵鸟策略这种不采取任务措施的方案会获得更高的性能。</p>
 <p>当发生死锁时不会对用户造成多大影响，或发生死锁的概率很低，可以采用鸵鸟策略。</p>
 <p>大多数操作系统，包括 Unix，Linux 和 Windows，处理死锁问题的办法仅仅是忽略它。</p>
-<h2><span id="死锁检测与死锁恢复">死锁检测与死锁恢复</span></h2><p>不试图阻止死锁，而是当检测到死锁发生时，采取措施进行恢复。</p>
-<h3><span id="1-每种类型一个资源的死锁检测">1. 每种类型一个资源的死锁检测</span></h3><p><img src alt></p>
+<h2 id="死锁检测与死锁恢复"><a href="#死锁检测与死锁恢复" class="headerlink" title="死锁检测与死锁恢复"></a>死锁检测与死锁恢复</h2><p>不试图阻止死锁，而是当检测到死锁发生时，采取措施进行恢复。</p>
+<h3 id="1-每种类型一个资源的死锁检测"><a href="#1-每种类型一个资源的死锁检测" class="headerlink" title="1. 每种类型一个资源的死锁检测"></a>1. 每种类型一个资源的死锁检测</h3><p><img src="" alt=""></p>
 <p>上图为资源分配图，其中方框表示资源，圆圈表示进程。资源指向进程表示该资源已经分配给该进程，进程指向资源表示进程请求获取该资源。</p>
 <p>图 a 可以抽取出环，如图 b，它满足了环路等待条件，因此会发生死锁。</p>
 <p>每种类型一个资源的死锁检测算法是通过检测有向图是否存在环来实现，从一个节点出发进行深度优先搜索，对访问过的节点进行标记，如果访问了已经标记的节点，就表示有向图存在环，也就是检测到死锁的发生。</p>
-<h3><span id="2-每种类型多个资源的死锁检测">2. 每种类型多个资源的死锁检测</span></h3><p><img src alt></p>
+<h3 id="2-每种类型多个资源的死锁检测"><a href="#2-每种类型多个资源的死锁检测" class="headerlink" title="2. 每种类型多个资源的死锁检测"></a>2. 每种类型多个资源的死锁检测</h3><p><img src="" alt=""></p>
 <p>上图中，有三个进程四个资源，每个数据代表的含义如下：</p>
 <ul>
 <li>E 向量：资源总量</li>
@@ -670,24 +531,24 @@
 <li>如果找到了这样一个进程，那么将 C 矩阵的第 i 行向量加到 A 中，标记该进程，并转回 1。</li>
 <li>如果没有这样一个进程，算法终止。</li>
 </ol>
-<h3><span id="3-死锁恢复">3. 死锁恢复</span></h3><ul>
+<h3 id="3-死锁恢复"><a href="#3-死锁恢复" class="headerlink" title="3. 死锁恢复"></a>3. 死锁恢复</h3><ul>
 <li>利用抢占恢复</li>
 <li>利用回滚恢复</li>
 <li>通过杀死进程恢复</li>
 </ul>
-<h2><span id="死锁预防">死锁预防</span></h2><p>在程序运行之前预防发生死锁。</p>
-<h3><span id="1-破坏互斥条件">1. 破坏互斥条件</span></h3><p>例如假脱机打印机技术允许若干个进程同时输出，唯一真正请求物理打印机的进程是打印机守护进程。</p>
-<h3><span id="2-破坏占有和等待条件">2. 破坏占有和等待条件</span></h3><p>一种实现方式是规定所有进程在开始执行前请求所需要的全部资源。</p>
-<h3><span id="3-破坏不可抢占条件">3. 破坏不可抢占条件</span></h3><h3><span id="4-破坏环路等待">4. 破坏环路等待</span></h3><p>给资源统一编号，进程只能按编号顺序来请求资源。</p>
-<h2><span id="死锁避免">死锁避免</span></h2><p>在程序运行时避免发生死锁。</p>
-<h3><span id="1-安全状态">1. 安全状态</span></h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ed523051-608f-4c3f-b343-383e2d194470.png" alt></p>
+<h2 id="死锁预防"><a href="#死锁预防" class="headerlink" title="死锁预防"></a>死锁预防</h2><p>在程序运行之前预防发生死锁。</p>
+<h3 id="1-破坏互斥条件"><a href="#1-破坏互斥条件" class="headerlink" title="1. 破坏互斥条件"></a>1. 破坏互斥条件</h3><p>例如假脱机打印机技术允许若干个进程同时输出，唯一真正请求物理打印机的进程是打印机守护进程。</p>
+<h3 id="2-破坏占有和等待条件"><a href="#2-破坏占有和等待条件" class="headerlink" title="2. 破坏占有和等待条件"></a>2. 破坏占有和等待条件</h3><p>一种实现方式是规定所有进程在开始执行前请求所需要的全部资源。</p>
+<h3 id="3-破坏不可抢占条件"><a href="#3-破坏不可抢占条件" class="headerlink" title="3. 破坏不可抢占条件"></a>3. 破坏不可抢占条件</h3><h3 id="4-破坏环路等待"><a href="#4-破坏环路等待" class="headerlink" title="4. 破坏环路等待"></a>4. 破坏环路等待</h3><p>给资源统一编号，进程只能按编号顺序来请求资源。</p>
+<h2 id="死锁避免"><a href="#死锁避免" class="headerlink" title="死锁避免"></a>死锁避免</h2><p>在程序运行时避免发生死锁。</p>
+<h3 id="1-安全状态"><a href="#1-安全状态" class="headerlink" title="1. 安全状态"></a>1. 安全状态</h3><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ed523051-608f-4c3f-b343-383e2d194470.png" alt=""></p>
 <p>图 a 的第二列 Has 表示已拥有的资源数，第三列 Max 表示总共需要的资源数，Free 表示还有可以使用的资源数。从图 a 开始出发，先让 B 拥有所需的所有资源（图 b），运行结束后释放 B，此时 Free 变为 5（图 c）；接着以同样的方式运行 C 和 A，使得所有进程都能成功运行，因此可以称图 a 所示的状态时安全的。</p>
 <p>定义：如果没有死锁发生，并且即使所有进程突然请求对资源的最大需求，也仍然存在某种调度次序能够使得每一个进程运行完毕，则称该状态是安全的。</p>
 <p>安全状态的检测与死锁的检测类似，因为安全状态必须要求不能发生死锁。下面的银行家算法与死锁检测算法非常类似，可以结合着做参考对比。</p>
-<h3><span id="2-单个资源的银行家算法">2. 单个资源的银行家算法</span></h3><p>一个小城镇的银行家，他向一群客户分别承诺了一定的贷款额度，算法要做的是判断对请求的满足是否会进入不安全状态，如果是，就拒绝请求；否则予以分配。</p>
-<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/d160ec2e-cfe2-4640-bda7-62f53e58b8c0.png" alt></p>
+<h3 id="2-单个资源的银行家算法"><a href="#2-单个资源的银行家算法" class="headerlink" title="2. 单个资源的银行家算法"></a>2. 单个资源的银行家算法</h3><p>一个小城镇的银行家，他向一群客户分别承诺了一定的贷款额度，算法要做的是判断对请求的满足是否会进入不安全状态，如果是，就拒绝请求；否则予以分配。</p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/d160ec2e-cfe2-4640-bda7-62f53e58b8c0.png" alt=""></p>
 <p>上图 c 为不安全状态，因此算法会拒绝之前的请求，从而避免进入图 c 中的状态。</p>
-<h3><span id="3-多个资源的银行家算法">3. 多个资源的银行家算法</span></h3><p><img src alt></p>
+<h3 id="3-多个资源的银行家算法"><a href="#3-多个资源的银行家算法" class="headerlink" title="3. 多个资源的银行家算法"></a>3. 多个资源的银行家算法</h3><p><img src="" alt=""></p>
 <p>上图中有五个进程，四个资源。左边的图表示已经分配的资源，右边的图表示还需要分配的资源。最右边的 E、P 以及 A 分别表示：总资源、已分配资源以及可用资源，注意这三个为向量，而不是具体数值，例如 A=(1020)，表示 4 个资源分别还剩下 1/0/2/0。</p>
 <p>检查一个状态是否安全的算法如下：</p>
 <ul>
@@ -696,18 +557,18 @@
 <li>重复以上两步，直到所有进程都标记为终止，则状态时安全的。</li>
 </ul>
 <p>如果一个状态不是安全的，需要拒绝进入这个状态。</p>
-<h1><span id="内存管理">内存管理</span></h1><h2><span id="虚拟内存">虚拟内存</span></h2><p>虚拟内存的目的是为了让物理内存扩充成更大的逻辑内存，从而让程序获得更多的可用内存。</p>
+<h1 id="内存管理-1"><a href="#内存管理-1" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><p>虚拟内存的目的是为了让物理内存扩充成更大的逻辑内存，从而让程序获得更多的可用内存。</p>
 <p>为了更好的管理内存，操作系统将内存抽象成地址空间。每个程序拥有自己的地址空间，这个地址空间被分割成多个块，每一块称为一页。这些页被映射到物理内存，但不需要映射到连续的物理内存，也不需要所有页都必须在物理内存中。当程序引用到不在物理内存中的页时，由硬件执行必要的映射，将缺失的部分装入物理内存并重新执行失败的指令。</p>
 <p>从上面的描述中可以看出，虚拟内存允许程序不用将地址空间中的每一页都映射到物理内存，也就是说一个程序不需要全部调入内存就可以运行，这使得有限的内存运行大程序成为可能。例如有一台计算机可以产生 16 位地址，那么一个程序的地址空间范围是 0~64K。该计算机只有 32KB 的物理内存，虚拟内存技术允许该计算机运行一个 64K 大小的程序。</p>
-<p><img src alt></p>
-<h2><span id="分页系统地址映射">分页系统地址映射</span></h2><p>内存管理单元（MMU）管理着地址空间和物理内存的转换，其中的页表（Page table）存储着页（程序地址空间）和页框（物理内存空间）的映射表。</p>
+<p><img src="" alt=""></p>
+<h2 id="分页系统地址映射"><a href="#分页系统地址映射" class="headerlink" title="分页系统地址映射"></a>分页系统地址映射</h2><p>内存管理单元（MMU）管理着地址空间和物理内存的转换，其中的页表（Page table）存储着页（程序地址空间）和页框（物理内存空间）的映射表。</p>
 <p>一个虚拟地址分成两个部分，一部分存储页面号，一部分存储偏移量。</p>
 <p>下图的页表存放着 16 个页，这 16 个页需要用 4 个比特位来进行索引定位。例如对于虚拟地址（0010 000000000100），前 4 位是存储页面号 2，读取表项内容为（110 1），页表项最后一位表示是否存在于内存中，1 表示存在。后 12 位存储偏移量。这个页对应的页框的地址为 （110 000000000100）。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/cf4386a1-58c9-4eca-a17f-e12b1e9770eb.png" width="500"> </div><br></p>
-<h2><span id="页面置换算法">页面置换算法</span></h2><p>在程序运行过程中，如果要访问的页面不在内存中，就发生缺页中断从而将该页调入内存中。此时如果内存已无空闲空间，系统必须从内存中调出一个页面到磁盘对换区中来腾出空间。</p>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/cf4386a1-58c9-4eca-a17f-e12b1e9770eb.png" width="500"/> </div><br></p>
+<h2 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h2><p>在程序运行过程中，如果要访问的页面不在内存中，就发生缺页中断从而将该页调入内存中。此时如果内存已无空闲空间，系统必须从内存中调出一个页面到磁盘对换区中来腾出空间。</p>
 <p>页面置换算法和缓存淘汰策略类似，可以将内存看成磁盘的缓存。在缓存系统中，缓存的大小有限，当有新的缓存到达时，需要淘汰一部分已经存在的缓存，这样才有空间存放新的缓存数据。</p>
 <p>页面置换算法的主要目标是使页面置换频率最低（也可以说缺页率最低）。</p>
-<h3><span id="1-最佳">1. 最佳</span></h3><blockquote>
+<h3 id="1-最佳"><a href="#1-最佳" class="headerlink" title="1. 最佳"></a>1. 最佳</h3><blockquote>
 <p>OPT, Optimal replacement algorithm</p>
 </blockquote>
 <p>所选择的被换出的页面将是最长时间内不再被访问，通常可以保证获得最低的缺页率。</p>
@@ -715,15 +576,15 @@
 <p>举例：一个系统为某进程分配了三个物理块，并有如下页面引用序列：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">7，0，1，2，0，3，0，4，2，3，0，3，2，1，2，0，1，7，0，1<br></code></pre></td></tr></table></figure>
 <p>开始运行时，先将 7, 0, 1 三个页面装入内存。当进程要访问页面 2 时，产生缺页中断，会将页面 7 换出，因为页面 7 再次被访问的时间最长。</p>
-<h3><span id="2-最近最久未使用">2. 最近最久未使用</span></h3><blockquote>
+<h3 id="2-最近最久未使用"><a href="#2-最近最久未使用" class="headerlink" title="2. 最近最久未使用"></a>2. 最近最久未使用</h3><blockquote>
 <p>LRU, Least Recently Used</p>
 </blockquote>
 <p>虽然无法知道将来要使用的页面情况，但是可以知道过去使用页面的情况。LRU 将最近最久未使用的页面换出。</p>
 <p>为了实现 LRU，需要在内存中维护一个所有页面的链表。当一个页面被访问时，将这个页面移到链表表头。这样就能保证链表表尾的页面是最近最久未访问的。</p>
 <p>因为每次访问都需要更新链表，因此这种方式实现的 LRU 代价很高。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">4，7，0，7，1，0，1，2，1，2，6<br></code></pre></td></tr></table></figure>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/eb859228-c0f2-4bce-910d-d9f76929352b.png"> </div><br></p>
-<h3><span id="3-最近未使用">3. 最近未使用</span></h3><blockquote>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/eb859228-c0f2-4bce-910d-d9f76929352b.png"/> </div><br></p>
+<h3 id="3-最近未使用"><a href="#3-最近未使用" class="headerlink" title="3. 最近未使用"></a>3. 最近未使用</h3><blockquote>
 <p>NRU, Not Recently Used</p>
 </blockquote>
 <p>每个页面都有两个状态位：R 与 M，当页面被访问时设置页面的 R=1，当页面被修改时设置 M=1。其中 R 位会定时被清零。可以将页面分成以下四类：</p>
@@ -735,32 +596,32 @@
 </ul>
 <p>当发生缺页中断时，NRU 算法随机地从类编号最小的非空类中挑选一个页面将它换出。</p>
 <p>NRU 优先换出已经被修改的脏页面（R=0，M=1），而不是被频繁使用的干净页面（R=1，M=0）。</p>
-<h3><span id="4-先进先出">4. 先进先出</span></h3><blockquote>
+<h3 id="4-先进先出"><a href="#4-先进先出" class="headerlink" title="4. 先进先出"></a>4. 先进先出</h3><blockquote>
 <p>FIFO, First In First Out</p>
 </blockquote>
 <p>选择换出的页面是最先进入的页面。</p>
 <p>该算法会将那些经常被访问的页面换出，导致缺页率升高。</p>
-<h3><span id="5-第二次机会算法">5. 第二次机会算法</span></h3><p>FIFO 算法可能会把经常使用的页面置换出去，为了避免这一问题，对该算法做一个简单的修改：</p>
+<h3 id="5-第二次机会算法"><a href="#5-第二次机会算法" class="headerlink" title="5. 第二次机会算法"></a>5. 第二次机会算法</h3><p>FIFO 算法可能会把经常使用的页面置换出去，为了避免这一问题，对该算法做一个简单的修改：</p>
 <p>当页面被访问 (读或写) 时设置该页面的 R 位为 1。需要替换的时候，检查最老页面的 R 位。如果 R 位是 0，那么这个页面既老又没有被使用，可以立刻置换掉；如果是 1，就将 R 位清 0，并把该页面放到链表的尾端，修改它的装入时间使它就像刚装入的一样，然后继续从链表的头部开始搜索。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ecf8ad5d-5403-48b9-b6e7-f2e20ffe8fca.png"> </div><br></p>
-<h3><span id="6-时钟">6. 时钟</span></h3><blockquote>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ecf8ad5d-5403-48b9-b6e7-f2e20ffe8fca.png"/> </div><br></p>
+<h3 id="6-时钟"><a href="#6-时钟" class="headerlink" title="6. 时钟"></a>6. 时钟</h3><blockquote>
 <p>Clock</p>
 </blockquote>
 <p>第二次机会算法需要在链表中移动页面，降低了效率。时钟算法使用环形链表将页面连接起来，再使用一个指针指向最老的页面。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/5f5ef0b6-98ea-497c-a007-f6c55288eab1.png"> </div><br></p>
-<h2><span id="分段">分段</span></h2><p>虚拟内存采用的是分页技术，也就是将地址空间划分成固定大小的页，每一页再与内存进行映射。</p>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/5f5ef0b6-98ea-497c-a007-f6c55288eab1.png"/> </div><br></p>
+<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><p>虚拟内存采用的是分页技术，也就是将地址空间划分成固定大小的页，每一页再与内存进行映射。</p>
 <p>下图为一个编译器在编译过程中建立的多个表，有 4 个表是动态增长的，如果使用分页系统的一维地址空间，动态增长的特点会导致覆盖问题的出现。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/22de0538-7c6e-4365-bd3b-8ce3c5900216.png"> </div><br></p>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/22de0538-7c6e-4365-bd3b-8ce3c5900216.png"/> </div><br></p>
 <p>分段的做法是把每个表分成段，一个段构成一个独立的地址空间。每个段的长度可以不同，并且可以动态增长。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e0900bb2-220a-43b7-9aa9-1d5cd55ff56e.png"> </div><br></p>
-<h2><span id="段页式">段页式</span></h2><p>程序的地址空间划分成多个拥有独立地址空间的段，每个段上的地址空间划分成大小相同的页。这样既拥有分段系统的共享和保护，又拥有分页系统的虚拟内存功能。</p>
-<h2><span id="分页与分段的比较">分页与分段的比较</span></h2><ul>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/e0900bb2-220a-43b7-9aa9-1d5cd55ff56e.png"/> </div><br></p>
+<h2 id="段页式"><a href="#段页式" class="headerlink" title="段页式"></a>段页式</h2><p>程序的地址空间划分成多个拥有独立地址空间的段，每个段上的地址空间划分成大小相同的页。这样既拥有分段系统的共享和保护，又拥有分页系统的虚拟内存功能。</p>
+<h2 id="分页与分段的比较"><a href="#分页与分段的比较" class="headerlink" title="分页与分段的比较"></a>分页与分段的比较</h2><ul>
 <li>对程序员的透明性：分页透明，但是分段需要程序员显式划分每个段。</li>
 <li>地址空间的维度：分页是一维地址空间，分段是二维的。</li>
 <li>大小是否可以改变：页的大小不可变，段的大小可以动态改变。</li>
 <li>出现的原因：分页主要用于实现虚拟内存，从而获得更大的地址空间；分段主要是为了使程序和数据可以被划分为逻辑上独立的地址空间并且有助于共享和保护。</li>
 </ul>
-<h1><span id="设备管理">设备管理</span></h1><h2><span id="磁盘结构">磁盘结构</span></h2><ul>
+<h1 id="设备管理-1"><a href="#设备管理-1" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="磁盘结构"><a href="#磁盘结构" class="headerlink" title="磁盘结构"></a>磁盘结构</h2><ul>
 <li>盘面（Platter）：一个磁盘有多个盘面；</li>
 <li>磁道（Track）：盘面上的圆形带状区域，一个盘面可以有多个磁道；</li>
 <li>扇区（Track Sector）：磁道上的一个弧段，一个磁道可以有多个扇区，它是最小的物理储存单位，目前主要有 512 bytes 与 4 K 两种大小；</li>
@@ -768,56 +629,56 @@
 <li>制动手臂（Actuator arm）：用于在磁道之间移动磁头；</li>
 <li>主轴（Spindle）：使整个盘面转动。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/014fbc4d-d873-4a12-b160-867ddaed9807.jpg"> </div><br></p>
-<h2><span id="磁盘调度算法">磁盘调度算法</span></h2><p>读写一个磁盘块的时间的影响因素有：</p>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/014fbc4d-d873-4a12-b160-867ddaed9807.jpg"/> </div><br></p>
+<h2 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h2><p>读写一个磁盘块的时间的影响因素有：</p>
 <ul>
 <li>旋转时间（主轴转动盘面，使得磁头移动到适当的扇区上）</li>
 <li>寻道时间（制动手臂移动，使得磁头移动到适当的磁道上）</li>
 <li>实际的数据传输时间</li>
 </ul>
 <p>其中，寻道时间最长，因此磁盘调度的主要目标是使磁盘的平均寻道时间最短。</p>
-<h3><span id="1-先来先服务">1. 先来先服务</span></h3><blockquote>
+<h3 id="1-先来先服务"><a href="#1-先来先服务" class="headerlink" title="1. 先来先服务"></a>1. 先来先服务</h3><blockquote>
 <p>FCFS, First Come First Served</p>
 </blockquote>
 <p>按照磁盘请求的顺序进行调度。</p>
 <p>优点是公平和简单。缺点也很明显，因为未对寻道做任何优化，使平均寻道时间可能较长。</p>
-<h3><span id="2-最短寻道时间优先">2. 最短寻道时间优先</span></h3><blockquote>
+<h3 id="2-最短寻道时间优先"><a href="#2-最短寻道时间优先" class="headerlink" title="2. 最短寻道时间优先"></a>2. 最短寻道时间优先</h3><blockquote>
 <p>SSTF, Shortest Seek Time First</p>
 </blockquote>
 <p>优先调度与当前磁头所在磁道距离最近的磁道。</p>
 <p>虽然平均寻道时间比较低，但是不够公平。如果新到达的磁道请求总是比一个在等待的磁道请求近，那么在等待的磁道请求会一直等待下去，也就是出现饥饿现象。具体来说，两端的磁道请求更容易出现饥饿现象。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/4e2485e4-34bd-4967-9f02-0c093b797aaa.png"> </div><br></p>
-<h3><span id="3-电梯算法">3. 电梯算法</span></h3><blockquote>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/4e2485e4-34bd-4967-9f02-0c093b797aaa.png"/> </div><br></p>
+<h3 id="3-电梯算法"><a href="#3-电梯算法" class="headerlink" title="3. 电梯算法"></a>3. 电梯算法</h3><blockquote>
 <p>SCAN</p>
 </blockquote>
 <p>电梯总是保持一个方向运行，直到该方向没有请求为止，然后改变运行方向。</p>
 <p>电梯算法（扫描算法）和电梯的运行过程类似，总是按一个方向来进行磁盘调度，直到该方向上没有未完成的磁盘请求，然后改变方向。</p>
 <p>因为考虑了移动方向，因此所有的磁盘请求都会被满足，解决了 SSTF 的饥饿问题。</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/271ce08f-c124-475f-b490-be44fedc6d2e.png"> </div><br></p>
-<h1><span id="链接">链接</span></h1><h2><span id="编译系统">编译系统</span></h2><p>以下是一个 hello.c 程序：</p>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/271ce08f-c124-475f-b490-be44fedc6d2e.png"/> </div><br></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><h2 id="编译系统"><a href="#编译系统" class="headerlink" title="编译系统"></a>编译系统</h2><p>以下是一个 hello.c 程序：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;hello, world\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>在 Unix 系统上，由编译器把源文件转换为目标文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gcc -o hello hello.c<br></code></pre></td></tr></table></figure>
 <p>这个过程大致如下：</p>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/b396d726-b75f-4a32-89a2-03a7b6e19f6f.jpg" width="800"> </div><br></p>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/b396d726-b75f-4a32-89a2-03a7b6e19f6f.jpg" width="800"/> </div><br></p>
 <ul>
 <li>预处理阶段：处理以 # 开头的预处理命令；</li>
 <li>编译阶段：翻译成汇编文件；</li>
 <li>汇编阶段：将汇编文件翻译成可重定位目标文件；</li>
 <li>链接阶段：将可重定位目标文件和 printf.o 等单独预编译好的目标文件进行合并，得到最终的可执行目标文件。</li>
 </ul>
-<h2><span id="静态链接">静态链接</span></h2><p>静态链接器以一组可重定位目标文件为输入，生成一个完全链接的可执行目标文件作为输出。链接器主要完成以下两个任务：</p>
+<h2 id="静态链接"><a href="#静态链接" class="headerlink" title="静态链接"></a>静态链接</h2><p>静态链接器以一组可重定位目标文件为输入，生成一个完全链接的可执行目标文件作为输出。链接器主要完成以下两个任务：</p>
 <ul>
 <li>符号解析：每个符号对应于一个函数、一个全局变量或一个静态变量，符号解析的目的是将每个符号引用与一个符号定义关联起来。</li>
 <li>重定位：链接器通过把每个符号定义与一个内存位置关联起来，然后修改所有对这些符号的引用，使得它们指向这个内存位置。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/47d98583-8bb0-45cc-812d-47eefa0a4a40.jpg"> </div><br></p>
-<h2><span id="目标文件">目标文件</span></h2><ul>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/47d98583-8bb0-45cc-812d-47eefa0a4a40.jpg"/> </div><br></p>
+<h2 id="目标文件"><a href="#目标文件" class="headerlink" title="目标文件"></a>目标文件</h2><ul>
 <li>可执行目标文件：可以直接在内存中执行；</li>
 <li>可重定位目标文件：可与其它可重定位目标文件在链接阶段合并，创建一个可执行目标文件；</li>
 <li>共享目标文件：这是一种特殊的可重定位目标文件，可以在运行时被动态加载进内存并链接；</li>
 </ul>
-<h2><span id="动态链接">动态链接</span></h2><p>静态库有以下两个问题：</p>
+<h2 id="动态链接"><a href="#动态链接" class="headerlink" title="动态链接"></a>动态链接</h2><p>静态库有以下两个问题：</p>
 <ul>
 <li>当静态库更新时那么整个程序都要重新进行链接；</li>
 <li>对于 printf 这种标准函数库，如果每个程序都要有代码，这会极大浪费资源。</li>
@@ -827,7 +688,7 @@
 <li>在给定的文件系统中一个库只有一个文件，所有引用该库的可执行目标文件都共享这个文件，它不会被复制到引用它的可执行文件中；</li>
 <li>在内存中，一个共享库的 .text 节（已编译程序的机器代码）的一个副本可以被不同的正在运行的进程共享。</li>
 </ul>
-<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/76dc7769-1aac-4888-9bea-064f1caa8e77.jpg"> </div><br></p>
+<p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/76dc7769-1aac-4888-9bea-064f1caa8e77.jpg"/> </div><br></p>
 
     </div>
 
@@ -873,7 +734,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag"># 计算机基础</a>
               <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
           </div>
 
@@ -949,7 +810,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">基本特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.3.</span> <span class="nav-text">虚拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.4.</span> <span class="nav-text">异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text">进程管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.2.</span> <span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.3.</span> <span class="nav-text">文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.4.</span> <span class="nav-text">设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">宏内核和微内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.1.</span> <span class="nav-text">宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.2.</span> <span class="nav-text">微内核</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.1.</span> <span class="nav-text">外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.2.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.3.</span> <span class="nav-text">陷入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">进程状态的切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text">进程调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 批处理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">1.1 先来先服务 first-come first-serverd（FCFS）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">1.2 短作业优先 shortest job first（SJF）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">1.3 最短剩余时间优先 shortest remaining time next（SRTN）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 交互式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">2.1 时间片轮转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">2.2 优先级调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">2.3 多级反馈队列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. 实时系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.4.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 临界区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 同步与互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.4.3.</span> <span class="nav-text">3. 信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.4.4.</span> <span class="nav-text">4. 管程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.5.</span> <span class="nav-text">经典同步问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.5.1.</span> <span class="nav-text">1. 哲学家进餐问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.5.2.</span> <span class="nav-text">2. 读者-写者问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.6.</span> <span class="nav-text">进程通信(IPC)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.6.1.</span> <span class="nav-text">1. 管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.6.2.</span> <span class="nav-text">2. FIFO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.6.3.</span> <span class="nav-text">3. 消息队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.6.4.</span> <span class="nav-text">4. 信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.6.5.</span> <span class="nav-text">5. 共享存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.6.6.</span> <span class="nav-text">6. 套接字</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">计算机操作系统 - 死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">必要条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">处理方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.3.</span> <span class="nav-text">鸵鸟策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.4.</span> <span class="nav-text">死锁检测与死锁恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.4.1.</span> <span class="nav-text">1. 每种类型一个资源的死锁检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.4.2.</span> <span class="nav-text">2. 每种类型多个资源的死锁检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.4.3.</span> <span class="nav-text">3. 死锁恢复</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.5.</span> <span class="nav-text">死锁预防</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.5.1.</span> <span class="nav-text">1. 破坏互斥条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.5.2.</span> <span class="nav-text">2. 破坏占有和等待条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.5.3.</span> <span class="nav-text">3. 破坏不可抢占条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.5.4.</span> <span class="nav-text">4. 破坏环路等待</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.6.</span> <span class="nav-text">死锁避免</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.6.1.</span> <span class="nav-text">1. 安全状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.6.2.</span> <span class="nav-text">2. 单个资源的银行家算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.6.3.</span> <span class="nav-text">3. 多个资源的银行家算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">虚拟内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">分页系统地址映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.3.</span> <span class="nav-text">页面置换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.3.1.</span> <span class="nav-text">1. 最佳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.3.2.</span> <span class="nav-text">2. 最近最久未使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.3.3.</span> <span class="nav-text">3. 最近未使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.3.4.</span> <span class="nav-text">4. 先进先出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.3.5.</span> <span class="nav-text">5. 第二次机会算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.3.6.</span> <span class="nav-text">6. 时钟</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.4.</span> <span class="nav-text">分段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.5.</span> <span class="nav-text">段页式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.6.</span> <span class="nav-text">分页与分段的比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">设备管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.1.</span> <span class="nav-text">磁盘结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.2.</span> <span class="nav-text">磁盘调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.2.1.</span> <span class="nav-text">1. 先来先服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.2.2.</span> <span class="nav-text">2. 最短寻道时间优先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.2.3.</span> <span class="nav-text">3. 电梯算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.1.</span> <span class="nav-text">编译系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.2.</span> <span class="nav-text">静态链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.3.</span> <span class="nav-text">目标文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.4.</span> <span class="nav-text">动态链接</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-number">1.1.</span> <span class="nav-text">基本特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91"><span class="nav-number">1.1.1.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB"><span class="nav-number">1.1.2.</span> <span class="nav-text">共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F"><span class="nav-number">1.1.3.</span> <span class="nav-text">虚拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5"><span class="nav-number">1.1.4.</span> <span class="nav-text">异步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-number">1.2.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">进程管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.2.</span> <span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.4.</span> <span class="nav-text">设备管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E5%86%85%E6%A0%B8%E5%92%8C%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-number">1.4.</span> <span class="nav-text">宏内核和微内核</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8F%E5%86%85%E6%A0%B8"><span class="nav-number">1.4.1.</span> <span class="nav-text">宏内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-number">1.4.2.</span> <span class="nav-text">微内核</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%88%86%E7%B1%BB"><span class="nav-number">1.5.</span> <span class="nav-text">中断分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E4%B8%AD%E6%96%AD"><span class="nav-number">1.5.1.</span> <span class="nav-text">外中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-number">1.5.2.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%B7%E5%85%A5"><span class="nav-number">1.5.3.</span> <span class="nav-text">陷入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86-1"><span class="nav-number">2.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8C%BA%E5%88%AB"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%E7%9A%84%E5%88%87%E6%8D%A2"><span class="nav-number">2.2.</span> <span class="nav-text">进程状态的切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">进程调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%89%B9%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 批处理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1-first-come-first-serverd%EF%BC%88FCFS%EF%BC%89"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">1.1 先来先服务 first-come first-serverd（FCFS）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E7%9F%AD%E4%BD%9C%E4%B8%9A%E4%BC%98%E5%85%88-shortest-job-first%EF%BC%88SJF%EF%BC%89"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">1.2 短作业优先 shortest job first（SJF）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E6%9C%80%E7%9F%AD%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4%E4%BC%98%E5%85%88-shortest-remaining-time-next%EF%BC%88SRTN%EF%BC%89"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">1.3 最短剩余时间优先 shortest remaining time next（SRTN）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%A4%E4%BA%92%E5%BC%8F%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 交互式系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">2.1 时间片轮转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">2.2 优先级调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">2.3 多级反馈队列</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AE%9E%E6%97%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. 实时系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-number">2.4.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%B4%E7%95%8C%E5%8C%BA"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 临界区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BA%92%E6%96%A5"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 同步与互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-number">2.4.3.</span> <span class="nav-text">3. 信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%AE%A1%E7%A8%8B"><span class="nav-number">2.4.4.</span> <span class="nav-text">4. 管程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98"><span class="nav-number">2.5.</span> <span class="nav-text">经典同步问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%93%B2%E5%AD%A6%E5%AE%B6%E8%BF%9B%E9%A4%90%E9%97%AE%E9%A2%98"><span class="nav-number">2.5.1.</span> <span class="nav-text">1. 哲学家进餐问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E9%97%AE%E9%A2%98"><span class="nav-number">2.5.2.</span> <span class="nav-text">2. 读者-写者问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1-IPC"><span class="nav-number">2.6.</span> <span class="nav-text">进程通信(IPC)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%AE%A1%E9%81%93"><span class="nav-number">2.6.1.</span> <span class="nav-text">1. 管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-FIFO"><span class="nav-number">2.6.2.</span> <span class="nav-text">2. FIFO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="nav-number">2.6.3.</span> <span class="nav-text">3. 消息队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="nav-number">2.6.4.</span> <span class="nav-text">4. 信号量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%85%B1%E4%BA%AB%E5%AD%98%E5%82%A8"><span class="nav-number">2.6.5.</span> <span class="nav-text">5. 共享存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">2.6.6.</span> <span class="nav-text">6. 套接字</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E6%AD%BB%E9%94%81"><span class="nav-number">3.</span> <span class="nav-text">计算机操作系统 - 死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">必要条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">处理方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%B8%B5%E9%B8%9F%E7%AD%96%E7%95%A5"><span class="nav-number">3.3.</span> <span class="nav-text">鸵鸟策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E6%AD%BB%E9%94%81%E6%81%A2%E5%A4%8D"><span class="nav-number">3.4.</span> <span class="nav-text">死锁检测与死锁恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%AF%8F%E7%A7%8D%E7%B1%BB%E5%9E%8B%E4%B8%80%E4%B8%AA%E8%B5%84%E6%BA%90%E7%9A%84%E6%AD%BB%E9%94%81%E6%A3%80%E6%B5%8B"><span class="nav-number">3.4.1.</span> <span class="nav-text">1. 每种类型一个资源的死锁检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%AF%8F%E7%A7%8D%E7%B1%BB%E5%9E%8B%E5%A4%9A%E4%B8%AA%E8%B5%84%E6%BA%90%E7%9A%84%E6%AD%BB%E9%94%81%E6%A3%80%E6%B5%8B"><span class="nav-number">3.4.2.</span> <span class="nav-text">2. 每种类型多个资源的死锁检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%AD%BB%E9%94%81%E6%81%A2%E5%A4%8D"><span class="nav-number">3.4.3.</span> <span class="nav-text">3. 死锁恢复</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E9%A2%84%E9%98%B2"><span class="nav-number">3.5.</span> <span class="nav-text">死锁预防</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%A0%B4%E5%9D%8F%E4%BA%92%E6%96%A5%E6%9D%A1%E4%BB%B6"><span class="nav-number">3.5.1.</span> <span class="nav-text">1. 破坏互斥条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A0%B4%E5%9D%8F%E5%8D%A0%E6%9C%89%E5%92%8C%E7%AD%89%E5%BE%85%E6%9D%A1%E4%BB%B6"><span class="nav-number">3.5.2.</span> <span class="nav-text">2. 破坏占有和等待条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%A0%B4%E5%9D%8F%E4%B8%8D%E5%8F%AF%E6%8A%A2%E5%8D%A0%E6%9D%A1%E4%BB%B6"><span class="nav-number">3.5.3.</span> <span class="nav-text">3. 破坏不可抢占条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%A0%B4%E5%9D%8F%E7%8E%AF%E8%B7%AF%E7%AD%89%E5%BE%85"><span class="nav-number">3.5.4.</span> <span class="nav-text">4. 破坏环路等待</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D"><span class="nav-number">3.6.</span> <span class="nav-text">死锁避免</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E5%85%A8%E7%8A%B6%E6%80%81"><span class="nav-number">3.6.1.</span> <span class="nav-text">1. 安全状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8D%95%E4%B8%AA%E8%B5%84%E6%BA%90%E7%9A%84%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="nav-number">3.6.2.</span> <span class="nav-text">2. 单个资源的银行家算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%A4%9A%E4%B8%AA%E8%B5%84%E6%BA%90%E7%9A%84%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="nav-number">3.6.3.</span> <span class="nav-text">3. 多个资源的银行家算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-1"><span class="nav-number">4.</span> <span class="nav-text">内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="nav-number">4.1.</span> <span class="nav-text">虚拟内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84"><span class="nav-number">4.2.</span> <span class="nav-text">分页系统地址映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="nav-number">4.3.</span> <span class="nav-text">页面置换算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9C%80%E4%BD%B3"><span class="nav-number">4.3.1.</span> <span class="nav-text">1. 最佳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9C%80%E8%BF%91%E6%9C%80%E4%B9%85%E6%9C%AA%E4%BD%BF%E7%94%A8"><span class="nav-number">4.3.2.</span> <span class="nav-text">2. 最近最久未使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9C%80%E8%BF%91%E6%9C%AA%E4%BD%BF%E7%94%A8"><span class="nav-number">4.3.3.</span> <span class="nav-text">3. 最近未使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA"><span class="nav-number">4.3.4.</span> <span class="nav-text">4. 先进先出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%9C%BA%E4%BC%9A%E7%AE%97%E6%B3%95"><span class="nav-number">4.3.5.</span> <span class="nav-text">5. 第二次机会算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%97%B6%E9%92%9F"><span class="nav-number">4.3.6.</span> <span class="nav-text">6. 时钟</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%AE%B5"><span class="nav-number">4.4.</span> <span class="nav-text">分段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text">段页式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E4%B8%8E%E5%88%86%E6%AE%B5%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">4.6.</span> <span class="nav-text">分页与分段的比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86-1"><span class="nav-number">5.</span> <span class="nav-text">设备管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E7%BB%93%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">磁盘结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">磁盘调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.2.1.</span> <span class="nav-text">1. 先来先服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9C%80%E7%9F%AD%E5%AF%BB%E9%81%93%E6%97%B6%E9%97%B4%E4%BC%98%E5%85%88"><span class="nav-number">5.2.2.</span> <span class="nav-text">2. 最短寻道时间优先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%94%B5%E6%A2%AF%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.3.</span> <span class="nav-text">3. 电梯算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F"><span class="nav-number">6.1.</span> <span class="nav-text">编译系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">6.2.</span> <span class="nav-text">静态链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6"><span class="nav-number">6.3.</span> <span class="nav-text">目标文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">6.4.</span> <span class="nav-text">动态链接</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1016,7 +877,7 @@
           <h3 class="widget-title">标签云小团</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95/" rel="tag">笔试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95/" rel="tag">笔试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">3</span></li></ul>
               </canvas>
           </div>
       </div>

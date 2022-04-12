@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/b7954a837df7139d.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2022/01/fc36a49ada8f0283.png">
 <meta property="article:published_time" content="2022-02-21T05:30:00.000Z">
-<meta property="article:modified_time" content="2022-04-12T07:01:29.372Z">
+<meta property="article:modified_time" content="2022-04-12T07:28:16.243Z">
 <meta property="article:author" content="binghujuelie">
 <meta property="article:tag" content="教程">
 <meta property="article:tag" content="git">
@@ -244,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-12 15:01:29" itemprop="dateModified" datetime="2022-04-12T15:01:29+08:00">2022-04-12</time>
+                <time title="修改时间：2022-04-12 15:28:16" itemprop="dateModified" datetime="2022-04-12T15:28:16+08:00">2022-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,64 +289,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!-- toc -->
-<ul>
-<li><a href="#初始化版本库">初始化版本库</a></li>
-<li><a href="#添加文件">添加文件</a></li>
-<li><a href="#时空穿梭">时空穿梭</a><ul>
-<li><a href="#修改历史查询">修改历史查询</a></li>
-<li><a href="#版本回退">版本回退</a></li>
-<li><a href="#工作区和暂存区">工作区和暂存区</a></li>
-<li><a href="#管理修改">管理修改</a></li>
-<li><a href="#撤销修改">撤销修改</a></li>
-<li><a href="#删除文件">删除文件</a></li>
-</ul>
-</li>
-<li><a href="#远程仓库">远程仓库</a><ul>
-<li><a href="#添加远程库">添加远程库</a><ul>
-<li><a href="#删除远程库">删除远程库</a></li>
-</ul>
-</li>
-<li><a href="#从远程库克隆">从远程库克隆</a></li>
-</ul>
-</li>
-<li><a href="#分支管理">分支管理</a><ul>
-<li><a href="#删除本地分支">删除本地分支</a></li>
-<li><a href="#删除远程分支">删除远程分支</a><ul>
-<li><a href="#解决冲突">解决冲突</a></li>
-<li><a href="#分支管理策略">分支管理策略</a></li>
-</ul>
-</li>
-<li><a href="#分支历史变迁">分支历史变迁</a><ul>
-<li><a href="#bug分支">BUG分支</a></li>
-<li><a href="#feature分支">Feature分支</a></li>
-<li><a href="#多人协作">多人协作</a></li>
-</ul>
-</li>
-<li><a href="#推送分支">推送分支</a></li>
-<li><a href="#抓取分支">抓取分支</a><ul>
-<li><a href="#rebase">Rebase</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#标签管理">标签管理</a><ul>
-<li><a href="#创建标签">创建标签</a></li>
-<li><a href="#操作标签">操作标签</a><ul>
-<li><a href="#推送标签到远程">推送标签到远程</a></li>
-<li><a href="#删除远程标签">删除远程标签</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#github删除仓库">Github删除仓库</a></li>
-<li><a href="#重命名某个文件">重命名某个文件</a></li>
-<li><a href="#git-add-命令">git add 命令</a></li>
-<li><a href="#git报错no-branch-rebasing-master">Git报错“*（no branch, rebasing master）”</a></li>
-</ul>
-<!-- tocstop -->
-<h2><span id="初始化版本库">初始化版本库</span></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git init <br></code></pre></td></tr></table></figure>
-<h2><span id="添加文件">添加文件</span></h2><p>把一个文件放到Git仓库只需要两步<br>readme.txt内容如下：</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="初始化版本库"><a href="#初始化版本库" class="headerlink" title="初始化版本库"></a>初始化版本库</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git init <br></code></pre></td></tr></table></figure>
+<h2 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h2><p>把一个文件放到Git仓库只需要两步<br>readme.txt内容如下：</p>
 <blockquote>
 <p>Git is a version control system.<br>Git is free software.<br>放在上文git init的目录下.<br>第一步，用命令git add告诉Git，可反复多次使用，添加多个文件,把文件添加到仓库：</p>
 </blockquote>
@@ -355,7 +299,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$ git commit -m &quot;wrote a readme file&quot;<br>[master (root-commit) eaadf4e] wrote a readme file<br> 1 file changed, 2 insertions(+)<br> create mode 100644 readme.txt<br></code></pre></td></tr></table></figure>
 <p>简单解释一下git commit命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。</p>
 <p>git commit命令执行成功后会告诉你，1 file changed：1个文件被改动（我们新添加的readme.txt文件）；2 insertions：插入了两行内容（readme.txt有两行）</p>
-<h2><span id="时空穿梭">时空穿梭</span></h2><h3><span id="修改历史查询">修改历史查询</span></h3><p>修改readme.txt文件</p>
+<h2 id="时空穿梭"><a href="#时空穿梭" class="headerlink" title="时空穿梭"></a>时空穿梭</h2><h3 id="修改历史查询"><a href="#修改历史查询" class="headerlink" title="修改历史查询"></a>修改历史查询</h3><p>修改readme.txt文件</p>
 <p>改成如下内容：</p>
 <p><code>Git is a distributed version control system.</code></p>
 <p><code>Git is free software.</code></p>
@@ -366,14 +310,14 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git diff<br>diff --git a/readme.txt b/readme.txt<br>index 07fc819..b18bfcc 100644<br>--- a/readme.txt<br>+++ b/readme.txt<br>@@ -1,2 +1,2 @@<br>-Git is a version control system<br>+Git is a distributed version control system.^M<br> Git is free software.<br>\ No newline at end of file<br></code></pre></td></tr></table></figure>
 <p>可以从上面的命令输出看到，我们在第一行添加了一个distributed单词。</p>
 <p>提交修改和提交新文件是一样的两步.</p>
-<h3><span id="版本回退">版本回退</span></h3><p>用 <code>git log</code>命令查看历史记录<br>注：<br>和SVN不一样，Git的commit id不是1，2，3……递增的数字，而是一个SHA1计算出来的一个非常大的数字，用十六进制表示。</p>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>用 <code>git log</code>命令查看历史记录<br>注：<br>和SVN不一样，Git的commit id不是1，2，3……递增的数字，而是一个SHA1计算出来的一个非常大的数字，用十六进制表示。</p>
 <p>Git中，用HEAD表示当前版本，也就是最新的提交1094adb…（注意我的提交ID和你的肯定不一样），上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
 <p>现在，我们要把当前版本append GPL回退到上一个版本add distributed，就可以使用 <code>git reset</code>命令,版本号没必要写全，前几位就可以了，Git会自动去找：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git reset --hard 4439d<br>HEAD is now at 4439dd9 add distributed<br></code></pre></td></tr></table></figure>
 <p>想恢复到新版本怎么办？找不到新版本的commit id怎么办？<br>Git提供了一个命令git reflog用来记录你的每一次命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git reflog<br>4439dd9 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to 4439d<br>daffbfd HEAD@&#123;1&#125;: commit: append GPL<br>4439dd9 (HEAD -&gt; master) HEAD@&#123;2&#125;: commit: add distributed<br>0c1e964 HEAD@&#123;3&#125;: commit (initial): write a readme file<br></code></pre></td></tr></table></figure>
 <p>我们可以知道append GPL的commit id是daffbfd</p>
-<h3><span id="工作区和暂存区">工作区和暂存区</span></h3><p>当前我的 <code>E:\test</code>就是工作区</p>
+<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><p>当前我的 <code>E:\test</code>就是工作区</p>
 <p>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
 <p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
 <p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
@@ -388,17 +332,17 @@
 <li>git diff —cached：是查看index与repository的差别的。</li>
 <li>git diff HEAD：是查看working tree和repository的差别的。其中：HEAD代表的是最近的一次commit的信息。</li>
 </ol>
-<h3><span id="管理修改">管理修改</span></h3><p>Git跟踪并管理的是修改，而非文件<br>git add放在暂存区之后，如果修改相应文件，应该重新git add 再git commit -m。否则修改的内容不会被提交。</p>
-<h3><span id="撤销修改">撤销修改</span></h3><p><code>git checkout --file</code>可以丢弃工作区的修改<br>命令git checkout — readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：</p>
+<h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h3><p>Git跟踪并管理的是修改，而非文件<br>git add放在暂存区之后，如果修改相应文件，应该重新git add 再git commit -m。否则修改的内容不会被提交。</p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><p><code>git checkout --file</code>可以丢弃工作区的修改<br>命令git checkout — readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：</p>
 <p>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p>
 <p>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p>
 <p>总之，就是让这个文件回到最近一次git commit或git add时的状态。</p>
 <p>命令git reset HEAD <code>&lt;file&gt;</code>可以把暂存区的修改撤销掉（unstage），重新放回工作区</p>
-<h3><span id="删除文件">删除文件</span></h3><p>一、确实要从版本库中删除该文件，那就用命令 <code>git rm</code>删掉，并且 <code>git commit</code>：</p>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>一、确实要从版本库中删除该文件，那就用命令 <code>git rm</code>删掉，并且 <code>git commit</code>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$ git rm test.txt<br>rm &#x27;test.txt&#x27;<br><br>$ git commit -m &quot;remove test.txt&quot;<br>[master d46f35e] remove test.txt<br> 1 file changed, 1 deletion(-)<br> delete mode 100644 test.txt<br></code></pre></td></tr></table></figure>
 <p>二、删错了，用git checkout恢复</p>
-<h2><span id="远程仓库">远程仓库</span></h2><p>github创建SSH KEY</p>
-<h3><span id="添加远程库">添加远程库</span></h3><p>先在github上创建一个Git仓库，然后根据github上的提示，在本地仓库运行命令</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>github创建SSH KEY</p>
+<h3 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h3><p>先在github上创建一个Git仓库，然后根据github上的提示，在本地仓库运行命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git remote add origin git@github.com:winfredliu/learngit.git<br></code></pre></td></tr></table></figure>
 <p>添加后，远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。<br>下一步，就可以把本地库的所有内容推送到远程库上：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git push -u origin main<br></code></pre></td></tr></table></figure>
@@ -406,14 +350,14 @@
 <p>由于远程库是空的，我们第一次推送main分支时，加上了-u参数，Git不但会把本地的main分支内容推送的远程新的main分支，还会把本地的main分支和远程的main分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>从现在起，只要本地作了提交，就可以通过命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$ git push origin main<br></code></pre></td></tr></table></figure>
 <p>把本地main分支的最新修改推送至GitHub.</p>
-<h4><span id="删除远程库">删除远程库</span></h4><p>如果添加的时候地址写错了，或者就是想删除远程库，可以用git remote rm <code>&lt;name&gt;</code>命令。使用前，建议先用git remote -v查看远程库信息，然后，根据名字删除，比如删除origin：</p>
+<h4 id="删除远程库"><a href="#删除远程库" class="headerlink" title="删除远程库"></a>删除远程库</h4><p>如果添加的时候地址写错了，或者就是想删除远程库，可以用git remote rm <code>&lt;name&gt;</code>命令。使用前，建议先用git remote -v查看远程库信息，然后，根据名字删除，比如删除origin：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git remote rm origin<br></code></pre></td></tr></table></figure>
 <p>此处的“删除”其实是解除了本地和远程的绑定关系，并不是物理上删除了远程库。远程库本身并没有任何改动。要真正删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。</p>
-<h3><span id="从远程库克隆">从远程库克隆</span></h3><p>用 <code>git clone</code>把远程库克隆到本地库</p>
+<h3 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h3><p>用 <code>git clone</code>把远程库克隆到本地库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git clone git@github.com:winfredliu/learngit.git<br></code></pre></td></tr></table></figure>
 <p>GitHub给出的地址不止一个，还可以用<a target="_blank" rel="noopener" href="https://github.com/winfredliu/learngit.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。">https://github.com/winfredliu/learngit.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。</a></p>
 <p>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https</p>
-<h2><span id="分支管理">分支管理</span></h2><p>首先，我们创建dev分支，然后切换到dev分支：</p>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p>首先，我们创建dev分支，然后切换到dev分支：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git checkout -b dev<br>Switched to a new branch &#x27;dev&#x27;<br></code></pre></td></tr></table></figure>
 <p><code>git checkout</code>命令加上-b参数表示创建并切换，相当于以下两条命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$ git branch dev<br>$ git checkout dev<br></code></pre></td></tr></table></figure>
@@ -422,10 +366,10 @@
 <p>git branch命令会列出所有分支，当前分支前面会标一个*号。<br>现在，我们把dev分支的工作成果合并到main分支</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git merge dev<br>Updating f92c8e5..a7abaa2<br>Fast-forward<br> readme.txt | 3 ++-<br> 1 file changed, 2 insertions(+), 1 deletion(-)<br></code></pre></td></tr></table></figure>
 <p><code>git merge</code>命令用于合并指定分支到当前分支.<br>注意到上面的Fast-forward信息，Git告诉我们，这次合并是“快进模式”，也就是直接把main指向dev的当前提交，所以合并速度非常快。</p>
-<h4><span id="删除本地分支">删除本地分支</span></h4><p>合并完成后，就可以放心地删除dev分支了，<code>git branch -d dev</code>是删除指令：</p>
+<h4 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h4><p>合并完成后，就可以放心地删除dev分支了，<code>git branch -d dev</code>是删除指令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git branch -d dev<br>Deleted branch dev (was a7abaa2).<br></code></pre></td></tr></table></figure>
 <p>我们注意到切换分支使用git checkout <code>&lt;branch&gt;</code>.实际上，切换分支这个动作，用switch更科学。因此，最新版本的Git提供了新的 <code>git switch</code>命令来切换分支：</p>
-<h4><span id="删除远程分支">删除远程分支</span></h4><p>指令：<code>git push &lt;远程主机名&gt; --detete &lt;删除分支名&gt;</code><br>删除出现如下错误：</p>
+<h4 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h4><p>指令：<code>git push &lt;远程主机名&gt; --detete &lt;删除分支名&gt;</code><br>删除出现如下错误：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git push origin --delete main<br>To github.com:winfredliu/learngit.git<br> ! [remote rejected] main (refusing to delete the current branch: refs/heads/main)<br>error: failed to push some refs to &#x27;github.com:winfredliu/learngit.git&#x27;<br></code></pre></td></tr></table></figure>
 <p>这是因为在我们的远程仓库中main是默认分支，所以无法删除。所以我们需要将远程仓库中的默认分支改为另外的分支。</p>
 <ol>
@@ -437,18 +381,18 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git switch -c dev<br></code></pre></td></tr></table></figure>
 <p>直接切换到已有的master分支，可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git switch master<br></code></pre></td></tr></table></figure>
-<h3><span id="解决冲突">解决冲突</span></h3><p>参考链接：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344" title="廖雪峰的教程-解决分支冲突问题">解决冲突</a></p>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p>参考链接：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344" title="廖雪峰的教程-解决分支冲突问题">解决冲突</a></p>
 <p>简要来说，合并分支时，每个分支工作区的文件如果不一致的话就会产生冲突。这个时候要使工作区文件相同。</p>
-<h3><span id="分支管理策略">分支管理策略</span></h3><p>通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
+<h3 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h3><p>通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
 <p>如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
 <p>下面我们实战一下—no-ff方式的git merge：</p>
 <p>首先，仍然创建并切换dev分支,修改readme.txt文件，并提交一个新的commit,现在，我们切换回main.</p>
 <p>准备合并dev分支，请注意 <code>--no-ff</code>参数，表示禁用 <code>Fast forward</code>：</p>
 <p>因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。</p>
-<h4><span id="分支历史变迁">分支历史变迁</span></h4><p>合并后，我们用git log看看分支历史</p>
+<h4 id="分支历史变迁"><a href="#分支历史变迁" class="headerlink" title="分支历史变迁"></a>分支历史变迁</h4><p>合并后，我们用git log看看分支历史</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$ git log --graph --pretty=oneline --abbrev-commit<br>*   e1e9c68 (HEAD -&gt; master) merge with no-ff<br>|\  <br>| * f52c633 (dev) add merge<br>|/  <br>*   cf810e4 conflict fixed<br></code></pre></td></tr></table></figure>
 <p><img src="https://s3.bmp.ovh/imgs/2022/01/b7954a837df7139d.png" alt="merge图" title="分支可视图"></p>
-<h3><span id="bug分支">BUG分支</span></h3><p>当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支 <code>issue-101</code>来修复它，但是，等等，当前正在 <code>dev</code>上进行的工作还没有提交：<br>git提供了一个 <code>git stash</code>功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：</p>
+<h3 id="BUG分支"><a href="#BUG分支" class="headerlink" title="BUG分支"></a>BUG分支</h3><p>当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支 <code>issue-101</code>来修复它，但是，等等，当前正在 <code>dev</code>上进行的工作还没有提交：<br>git提供了一个 <code>git stash</code>功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git stash<br></code></pre></td></tr></table></figure>
 <p>现在，用 <code>git status</code>查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug。</p>
 <p>首先确定要在哪个分支上修复bug，假定需要在main分支上修复，就从main创建临时分支 <code>issue-101</code>。</p>
@@ -473,18 +417,18 @@
 <p>为了方便操作，Git专门提供了一个cherry-pick命令，让我们能复制一个特定的提交到当前分支</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git cherry-pick 4c805e2<br></code></pre></td></tr></table></figure>
 <p>当然要确保当前分支在dev上。</p>
-<h3><span id="feature分支">Feature分支</span></h3><p>软件开发中，总有无穷无尽的新的功能要不断添加进来。</p>
+<h3 id="Feature分支"><a href="#Feature分支" class="headerlink" title="Feature分支"></a>Feature分支</h3><p>软件开发中，总有无穷无尽的新的功能要不断添加进来。</p>
 <p>添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git switch -c feature-1<br>git add 某个文件<br>git commit -m &quot;&quot;<br>git switch 起始分支<br></code></pre></td></tr></table></figure>
 <p>就在此时，接到上级命令，因经费不足，新功能必须取消！</p>
 <p>Git友情提醒，feature-vulcan分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的-D参数。。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git branch -D feature-1<br></code></pre></td></tr></table></figure>
-<h3><span id="多人协作">多人协作</span></h3><p>当你从远程仓库克隆时，实际上Git自动把本地的分支和远程的m分支对应起来了，并且，远程仓库的默认名称是origin。</p>
+<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><p>当你从远程仓库克隆时，实际上Git自动把本地的分支和远程的m分支对应起来了，并且，远程仓库的默认名称是origin。</p>
 <p>要查看远程库的信息，用 <code>git remote</code>:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git remote<br>origin<br></code></pre></td></tr></table></figure>
 <p>或者，用 <code>git remote -v</code>显示更详细的信息：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git remote -v<br>origin  git@github.com:winfredliu/learngit.git (fetch)<br>origin  git@github.com:winfredliu/learngit.git (push)<br></code></pre></td></tr></table></figure>
-<h4><span id="推送分支">推送分支</span></h4><p>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：</p>
+<h4 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h4><p>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git push origin main<br></code></pre></td></tr></table></figure>
 <p>但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？</p>
 <ul>
@@ -493,7 +437,7 @@
 <li>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
 <li>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</li>
 </ul>
-<h4><span id="抓取分支">抓取分支</span></h4><p>人协作时，大家都会往master和dev分支上推送各自的修改。<br>当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的master分支。<br>现在，你的小伙伴要在dev分支上开发，就必须创建远程origin的dev分支到本地，于是他用这个命令创建本地dev分支：</p>
+<h4 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h4><p>人协作时，大家都会往master和dev分支上推送各自的修改。<br>当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的master分支。<br>现在，你的小伙伴要在dev分支上开发，就必须创建远程origin的dev分支到本地，于是他用这个命令创建本地dev分支：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">git checkout -b dev origin/dev<br></code></pre></td></tr></table></figure>
 <p><img src="https://i.bmp.ovh/imgs/2022/01/fc36a49ada8f0283.png" alt="这是图片"><br>注：如上图所示，你test目录下clone，但管理该项目应该在learngit目录下</p>
 <p>现在，他就可以在dev上继续修改，然后，时不时地把dev分支push到远程。你的小伙伴已经向origin/dev分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送。</p>
@@ -503,12 +447,12 @@
 <p>再pull.</p>
 <p>这回git pull成功，但是合并有冲突，需要手动解决，解决的方法和分支管理中的解决冲突完全一样。解决后，提交，再push.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$ git commit -m &quot;fix env conflict&quot;<br>[dev 57c53ab] fix env conflict<br><br>$ git push origin dev<br>Counting objects: 6, done.<br>Delta compression using up to 4 threads.<br>Compressing objects: 100% (4/4), done.<br>Writing objects: 100% (6/6), 621 bytes | 621.00 KiB/s, done.<br>Total 6 (delta 0), reused 0 (delta 0)<br>To github.com:michaelliao/learngit.git<br>   7a5e5dd..57c53ab  dev -&gt; dev<br></code></pre></td></tr></table></figure>
-<h3><span id="rebase">Rebase</span></h3><p>Git有一种称为rebase的操作，有人把它翻译成“变基”。</p>
+<h3 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h3><p>Git有一种称为rebase的操作，有人把它翻译成“变基”。</p>
 <p>我们输入命令 <code>git rebase</code>,原本分叉的提交现在变成一条直线了.这就是rebase操作的特点：把分叉的提交历史“整理”成一条直线，看上去更直观</p>
-<h2><span id="标签管理">标签管理</span></h2><p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。</p>
+<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。</p>
 <p>Git的标签虽然是版本库的快照，但其实它就是指向某个commit的指针（跟分支很像对不对？但是分支可以移动，标签不能移动），所以，创建和删除标签都是瞬间完成的。</p>
 <p>commit号不如tag直观。</p>
-<h3><span id="创建标签">创建标签</span></h3><p>在Git中打标签非常简单，首先，切换到需要打标签的分支上,然后，敲命令 <code>git tag &lt;name&gt;</code>就可以打一个新标签：</p>
+<h3 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h3><p>在Git中打标签非常简单，首先，切换到需要打标签的分支上,然后，敲命令 <code>git tag &lt;name&gt;</code>就可以打一个新标签：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git tag v1.0<br></code></pre></td></tr></table></figure>
 <p>可以用命令 <code>git tag</code>查看所有标签：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git tag<br>v1.0<br></code></pre></td></tr></table></figure>
@@ -524,24 +468,24 @@
 <p>用命令 <code>git show &lt;tagname&gt;</code>可以看到说明文字:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tag v0.1<br>Tagger: winfredliu &lt;3194769362@qq.com&gt;<br>Date:   Tue Jan 18 20:11:52 2022 +0800<br><br>version 0.1 released<br><br>commit 0c1e9644bed1817dc3671747fd8da4825387bd9a (tag: v0.1)<br>Author: winfredliu &lt;3194769362@qq.com&gt;<br>Date:   Thu Jan 13 18:07:40 2022 +0800<br><br>    write a readme file<br>.......<br></code></pre></td></tr></table></figure>
 <p>注：标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。</p>
-<h3><span id="操作标签">操作标签</span></h3><p>如果标签打错了，也可以删除：</p>
+<h3 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h3><p>如果标签打错了，也可以删除：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git tag -d v0.1<br>Deleted tag &#x27;v0.1&#x27; (was 2acd0d6)<br></code></pre></td></tr></table></figure>
 <p>因为创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。</p>
-<h4><span id="推送标签到远程">推送标签到远程</span></h4><p>如果要推送某个标签到远程，使用命令 <code>git push origin &lt;tagname&gt;</code>：</p>
+<h4 id="推送标签到远程"><a href="#推送标签到远程" class="headerlink" title="推送标签到远程"></a>推送标签到远程</h4><p>如果要推送某个标签到远程，使用命令 <code>git push origin &lt;tagname&gt;</code>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git push origin v1.0<br>Total 0 (delta 0), reused 0 (delta 0), pack-reused 0<br>To github.com:winfredliu/learngit.git<br> * [new tag]         v1.0 -&gt; v1.0<br></code></pre></td></tr></table></figure>
 <p>或者，一次性推送全部尚未推送到远程的本地标签：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git push origin --tags<br>Total 0 (delta 0), reused 0 (delta 0), pack-reused 0<br>To github.com:winfredliu/learngit.git<br> * [new tag]         v0.9 -&gt; v0.9<br></code></pre></td></tr></table></figure>
-<h4><span id="删除远程标签">删除远程标签</span></h4><p>如果标签已经推送到远程，要删除远程标签就麻烦一点，先从本地删除：</p>
+<h4 id="删除远程标签"><a href="#删除远程标签" class="headerlink" title="删除远程标签"></a>删除远程标签</h4><p>如果标签已经推送到远程，要删除远程标签就麻烦一点，先从本地删除：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt;git tag -d v0.9<br>Deleted tag &#x27;v0.9&#x27; (was 4439dd9)<br></code></pre></td></tr></table></figure>
 <p>然后，从远程删除。删除命令也是push，但是格式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">E:\test&gt; git push origin :refs/tags/v0.9<br>To github.com:winfredliu/learngit.git<br> - [deleted]         v0.9<br></code></pre></td></tr></table></figure>
-<h2><span id="github删除仓库">Github删除仓库</span></h2><p>如果我们想要删除Github中没有用的仓库，应该如何去做呢？</p>
+<h2 id="Github删除仓库"><a href="#Github删除仓库" class="headerlink" title="Github删除仓库"></a>Github删除仓库</h2><p>如果我们想要删除Github中没有用的仓库，应该如何去做呢？</p>
 <p>进入到我们需要删除的仓库里面，找到“settings”即仓库设置,<br>然后，在仓库设置里拉到最底部，找到“Danger Zone”即危险区域,<br>点击“Delete this repository”这样就可以删除该仓库了。</p>
-<h2><span id="重命名某个文件">重命名某个文件</span></h2><p>比如将<code>readme.md</code>改为<code>README.md</code>要先<code>git add</code>,<code>git commit</code> <code>readme.md</code>；再<code>git add</code>,<code>git commit</code> <code>README.md</code></p>
-<h2><span id="git-add-命令">git add 命令</span></h2><p>我们可以使用命令git add将所加入的文件添加进来</p>
+<h2 id="重命名某个文件"><a href="#重命名某个文件" class="headerlink" title="重命名某个文件"></a>重命名某个文件</h2><p>比如将<code>readme.md</code>改为<code>README.md</code>要先<code>git add</code>,<code>git commit</code> <code>readme.md</code>；再<code>git add</code>,<code>git commit</code> <code>README.md</code></p>
+<h2 id="git-add-命令"><a href="#git-add-命令" class="headerlink" title="git add 命令"></a>git add 命令</h2><p>我们可以使用命令git add将所加入的文件添加进来</p>
 <p><code>git add .</code>将仓库文件夹中的内容都添加进来</p>
 <p><code>git add *.</code>文件类型//添加指定文件类型的文件</p>
-<h2><span id="git报错no-branch-rebasing-master">Git报错“*（no branch, rebasing master）”</span></h2><p>本次出现这个错误是因为本地提交了<code>commit</code>但是未<code>push</code>成功，所以使用<code>git pull --rebase</code>，由于远程仓库和本地的<code>commit</code>有冲突，Git无法自动解决冲突时，会切换到一个匿名分支，然后使用<code>git branch</code>发现报错<code>“no branch, rebasing master”</code>。</p>
+<h2 id="Git报错“-（no-branch-rebasing-master）”"><a href="#Git报错“-（no-branch-rebasing-master）”" class="headerlink" title="Git报错“*（no branch, rebasing master）”"></a>Git报错“*（no branch, rebasing master）”</h2><p>本次出现这个错误是因为本地提交了<code>commit</code>但是未<code>push</code>成功，所以使用<code>git pull --rebase</code>，由于远程仓库和本地的<code>commit</code>有冲突，Git无法自动解决冲突时，会切换到一个匿名分支，然后使用<code>git branch</code>发现报错<code>“no branch, rebasing master”</code>。</p>
 <p>解决办法：</p>
 <p>在当前匿名分支下，解决完冲突，然后使用命令<code>git rebase --continue</code>，可以将代码合并到之前操作时的分支（我当时是在master分支所以后面都说master分支），执行完<code>git rebase --continue</code>后就自动回到了<code>master</code>分支，但是之前提交的commit没有在本地仓库区(<code>Repository</code>)了，回到了本地暂存区(Index / Stage)，这时候需要重新<code>commit</code>，之后再执行<code>git push origin master</code>就可以将变更推到远程仓库了。</p>
 
@@ -665,7 +609,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">初始化版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">添加文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">时空穿梭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">修改历史查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.3.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.4.</span> <span class="nav-text">管理修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.5.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.6.</span> <span class="nav-text">删除文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">添加远程库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.1.</span> <span class="nav-text">删除远程库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">从远程库克隆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.0.1.</span> <span class="nav-text">删除本地分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.0.2.</span> <span class="nav-text">删除远程分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.1.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.2.</span> <span class="nav-text">分支管理策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.2.1.</span> <span class="nav-text">分支历史变迁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.3.</span> <span class="nav-text">BUG分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.4.</span> <span class="nav-text">Feature分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.5.</span> <span class="nav-text">多人协作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.5.1.</span> <span class="nav-text">推送分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">5.5.2.</span> <span class="nav-text">抓取分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.6.</span> <span class="nav-text">Rebase</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">标签管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">6.1.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">6.2.</span> <span class="nav-text">操作标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.2.1.</span> <span class="nav-text">推送标签到远程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">6.2.2.</span> <span class="nav-text">删除远程标签</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">Github删除仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">8.</span> <span class="nav-text">重命名某个文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">9.</span> <span class="nav-text">git add 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">10.</span> <span class="nav-text">Git报错“*（no branch, rebasing master）”</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">初始化版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">添加文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E7%A9%BA%E7%A9%BF%E6%A2%AD"><span class="nav-number">3.</span> <span class="nav-text">时空穿梭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2%E6%9F%A5%E8%AF%A2"><span class="nav-number">3.1.</span> <span class="nav-text">修改历史查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="nav-number">3.2.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">3.3.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E4%BF%AE%E6%94%B9"><span class="nav-number">3.4.</span> <span class="nav-text">管理修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9"><span class="nav-number">3.5.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-number">3.6.</span> <span class="nav-text">删除文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="nav-number">4.1.</span> <span class="nav-text">添加远程库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="nav-number">4.1.1.</span> <span class="nav-text">删除远程库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E5%BA%93%E5%85%8B%E9%9A%86"><span class="nav-number">4.2.</span> <span class="nav-text">从远程库克隆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">5.0.1.</span> <span class="nav-text">删除本地分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">5.0.2.</span> <span class="nav-text">删除远程分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-number">5.1.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5"><span class="nav-number">5.2.</span> <span class="nav-text">分支管理策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%8E%86%E5%8F%B2%E5%8F%98%E8%BF%81"><span class="nav-number">5.2.1.</span> <span class="nav-text">分支历史变迁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BUG%E5%88%86%E6%94%AF"><span class="nav-number">5.3.</span> <span class="nav-text">BUG分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature%E5%88%86%E6%94%AF"><span class="nav-number">5.4.</span> <span class="nav-text">Feature分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%BA%BA%E5%8D%8F%E4%BD%9C"><span class="nav-number">5.5.</span> <span class="nav-text">多人协作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E5%88%86%E6%94%AF"><span class="nav-number">5.5.1.</span> <span class="nav-text">推送分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%93%E5%8F%96%E5%88%86%E6%94%AF"><span class="nav-number">5.5.2.</span> <span class="nav-text">抓取分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rebase"><span class="nav-number">5.6.</span> <span class="nav-text">Rebase</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86"><span class="nav-number">6.</span> <span class="nav-text">标签管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE"><span class="nav-number">6.1.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%A0%87%E7%AD%BE"><span class="nav-number">6.2.</span> <span class="nav-text">操作标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE%E5%88%B0%E8%BF%9C%E7%A8%8B"><span class="nav-number">6.2.1.</span> <span class="nav-text">推送标签到远程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE"><span class="nav-number">6.2.2.</span> <span class="nav-text">删除远程标签</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github%E5%88%A0%E9%99%A4%E4%BB%93%E5%BA%93"><span class="nav-number">7.</span> <span class="nav-text">Github删除仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="nav-number">8.</span> <span class="nav-text">重命名某个文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add-%E5%91%BD%E4%BB%A4"><span class="nav-number">9.</span> <span class="nav-text">git add 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E6%8A%A5%E9%94%99%E2%80%9C-%EF%BC%88no-branch-rebasing-master%EF%BC%89%E2%80%9D"><span class="nav-number">10.</span> <span class="nav-text">Git报错“*（no branch, rebasing master）”</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -732,7 +676,7 @@
           <h3 class="widget-title">标签云小团</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95/" rel="tag">笔试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95/" rel="tag">笔试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">3</span></li></ul>
               </canvas>
           </div>
       </div>
