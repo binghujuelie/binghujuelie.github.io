@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/7b3efa99-d306-4982-8cfb-e7153c33aab4.png">
 <meta property="og:image" content="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/ed5522bb-3a60-481c-8654-43e7195a48fe.png">
 <meta property="article:published_time" content="2022-03-06T05:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-18T07:18:33.245Z">
+<meta property="article:modified_time" content="2022-04-12T06:40:58.696Z">
 <meta property="article:author" content="binghujuelie">
 <meta property="article:tag" content="教程">
 <meta property="article:tag" content="网络">
@@ -304,7 +304,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-18 15:18:33" itemprop="dateModified" datetime="2022-03-18T15:18:33+08:00">2022-03-18</time>
+                <time title="修改时间：2022-04-12 14:40:58" itemprop="dateModified" datetime="2022-04-12T14:40:58+08:00">2022-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -349,136 +349,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="计算机网络-概述"><a href="#计算机网络-概述" class="headerlink" title="计算机网络 - 概述"></a>计算机网络 - 概述</h1><!-- GFM-TOC -->
-<ul>
-<li><a href="#计算机网络---概述">计算机网络 - 概述</a><ul>
-<li><a href="#网络的网络">网络的网络</a></li>
-<li><a href="#isp">ISP</a></li>
-<li><a href="#主机之间的通信方式">主机之间的通信方式</a></li>
-<li><a href="#电路交换与分组交换">电路交换与分组交换</a><ul>
-<li><a href="#1-电路交换">1. 电路交换</a></li>
-<li><a href="#2-分组交换">2. 分组交换</a></li>
-</ul>
-</li>
-<li><a href="#时延">时延</a><ul>
-<li><a href="#1-排队时延">1. 排队时延</a></li>
-<li><a href="#2-处理时延">2. 处理时延</a></li>
-<li><a href="#3-传输时延">3. 传输时延</a></li>
-<li><a href="#4-传播时延">4. 传播时延</a></li>
-</ul>
-</li>
-<li><a href="#计算机网络体系结构">计算机网络体系结构</a><ul>
-<li><a href="#1-五层协议">1. 五层协议</a></li>
-<li><a href="#2-osi">2. OSI</a></li>
-<li><a href="#3-tcpip">3. TCP/IP</a></li>
-<li><a href="#4-数据在各层之间的传递过程">4. 数据在各层之间的传递过程</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#计算机网络-物理层">计算机网络-物理层</a><ul>
-<li><a href="#通信方式">通信方式</a><ul>
-<li><a href="#带通调制">带通调制</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#计算机网络---链路层">计算机网络 - 链路层</a><ul>
-<li><a href="#基本问题">基本问题</a><ul>
-<li><a href="#1-封装成帧">1. 封装成帧</a></li>
-<li><a href="#2-透明传输">2. 透明传输</a></li>
-<li><a href="#3-差错检测">3. 差错检测</a></li>
-</ul>
-</li>
-<li><a href="#信道分类">信道分类</a><ul>
-<li><a href="#1-广播信道">1. 广播信道</a></li>
-<li><a href="#2-点对点信道">2. 点对点信道</a></li>
-</ul>
-</li>
-<li><a href="#信道复用技术">信道复用技术</a><ul>
-<li><a href="#1-频分复用">1. 频分复用</a></li>
-<li><a href="#2-时分复用">2. 时分复用</a></li>
-<li><a href="#3-统计时分复用">3. 统计时分复用</a></li>
-<li><a href="#4-波分复用">4. 波分复用</a></li>
-<li><a href="#5-码分复用">5. 码分复用</a></li>
-</ul>
-</li>
-<li><a href="#csmacd-协议">CSMA/CD 协议</a></li>
-<li><a href="#ppp-协议">PPP 协议</a></li>
-<li><a href="#mac-地址">MAC 地址</a></li>
-<li><a href="#局域网">局域网</a></li>
-<li><a href="#以太网">以太网</a></li>
-<li><a href="#交换机">交换机</a></li>
-<li><a href="#虚拟局域网">虚拟局域网</a></li>
-</ul>
-</li>
-<li><a href="#计算机网络---网络层">计算机网络 - 网络层</a><ul>
-<li><a href="#概述">概述</a></li>
-<li><a href="#ip-数据报格式">IP 数据报格式</a></li>
-<li><a href="#ip-地址编址方式">IP 地址编址方式</a><ul>
-<li><a href="#1-分类">1. 分类</a></li>
-<li><a href="#2-子网划分">2. 子网划分</a></li>
-<li><a href="#3-无分类">3. 无分类</a></li>
-</ul>
-</li>
-<li><a href="#地址解析协议-arp">地址解析协议 ARP</a></li>
-<li><a href="#网际控制报文协议-icmp">网际控制报文协议 ICMP</a><ul>
-<li><a href="#1-ping">1. Ping</a></li>
-<li><a href="#2-traceroute">2. Traceroute</a></li>
-</ul>
-</li>
-<li><a href="#虚拟专用网-vpn">虚拟专用网 VPN</a></li>
-<li><a href="#网络地址转换-nat">网络地址转换 NAT</a></li>
-<li><a href="#路由器的结构">路由器的结构</a></li>
-<li><a href="#路由器分组转发流程">路由器分组转发流程</a></li>
-<li><a href="#路由选择协议">路由选择协议</a><ul>
-<li><a href="#1-内部网关协议-rip">1. 内部网关协议 RIP</a></li>
-<li><a href="#2-内部网关协议-ospf">2. 内部网关协议 OSPF</a></li>
-<li><a href="#3-外部网关协议-bgp">3. 外部网关协议 BGP</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#计算机网络---传输层">计算机网络 - 传输层</a><ul>
-<li><a href="#udp-和-tcp-的特点">UDP 和 TCP 的特点</a></li>
-<li><a href="#udp-首部格式">UDP 首部格式</a></li>
-<li><a href="#tcp-首部格式">TCP 首部格式</a></li>
-<li><a href="#tcp-的三次握手">TCP 的三次握手</a></li>
-<li><a href="#tcp-的四次挥手">TCP 的四次挥手</a></li>
-<li><a href="#tcp-可靠传输">TCP 可靠传输</a></li>
-<li><a href="#tcp-滑动窗口">TCP 滑动窗口</a></li>
-<li><a href="#tcp-流量控制">TCP 流量控制</a></li>
-<li><a href="#tcp-拥塞控制">TCP 拥塞控制</a><ul>
-<li><a href="#1-慢开始与拥塞避免">1. 慢开始与拥塞避免</a></li>
-<li><a href="#2-快重传与快恢复">2. 快重传与快恢复</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#计算机网络---应用层">计算机网络 - 应用层</a><ul>
-<li><a href="#域名系统">域名系统</a></li>
-<li><a href="#文件传送协议">文件传送协议</a></li>
-<li><a href="#动态主机配置协议">动态主机配置协议</a></li>
-<li><a href="#远程登录协议">远程登录协议</a></li>
-<li><a href="#电子邮件协议">电子邮件协议</a><ul>
-<li><a href="#1-smtp">1. SMTP</a></li>
-<li><a href="#2-pop3">2. POP3</a></li>
-<li><a href="#3-imap">3. IMAP</a></li>
-</ul>
-</li>
-<li><a href="#常用端口">常用端口</a></li>
-<li><a href="#web-页面请求过程">Web 页面请求过程</a><ul>
-<li><a href="#1-dhcp-配置主机信息">1. DHCP 配置主机信息</a></li>
-<li><a href="#2-arp-解析-mac-地址">2. ARP 解析 MAC 地址</a></li>
-<li><a href="#3-dns-解析域名">3. DNS 解析域名</a></li>
-<li><a href="#4-http-请求页面">4. HTTP 请求页面</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<!-- GFM-TOC -->
-<h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><p>网络把主机连接起来，而互连网（internet）是把多种不同的网络连接起来，因此互连网是网络的网络。而互联网（Internet）是全球范围的互连网。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>[TOC]</p>
+<h1 id="计算机网络-概述"><a href="#计算机网络-概述" class="headerlink" title="计算机网络 - 概述"></a>计算机网络 - 概述</h1><h2 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h2><p>网络把主机连接起来，而互连网（internet）是把多种不同的网络连接起来，因此互连网是网络的网络。而互联网（Internet）是全球范围的互连网。</p>
 <p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/network-of-networks.gif" width="450"/> </div><br></p>
 <h2 id="ISP"><a href="#ISP" class="headerlink" title="ISP"></a>ISP</h2><p>互联网服务提供商 ISP 可以从互联网管理机构获得许多 IP 地址，同时拥有通信线路以及路由器等联网设备，个人或机构向 ISP 缴纳一定的费用就可以接入互联网。</p>
 <p><div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/72be01cd-41ae-45f7-99b9-a8d284e44dd4.png" width="500"/> </div><br></p>
@@ -1302,7 +1174,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1315,7 +1187,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1353,7 +1225,7 @@
           <h3 class="widget-title">标签云小团</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95/" rel="tag">笔试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
       </div>

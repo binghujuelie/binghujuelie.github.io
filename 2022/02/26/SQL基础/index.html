@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://img2020.cnblogs.com/blog/1435948/202003/1435948-20200329164526213-1738106582.png">
 <meta property="og:image" content="https://img2020.cnblogs.com/blog/1435948/202003/1435948-20200329171906958-413431918.png">
 <meta property="article:published_time" content="2022-02-26T13:50:00.000Z">
-<meta property="article:modified_time" content="2022-03-18T09:28:23.797Z">
+<meta property="article:modified_time" content="2022-04-12T06:42:40.215Z">
 <meta property="article:author" content="binghujuelie">
 <meta property="article:tag" content="数据库">
 <meta property="article:tag" content="教程">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-18 17:28:23" itemprop="dateModified" datetime="2022-03-18T17:28:23+08:00">2022-03-18</time>
+                <time title="修改时间：2022-04-12 14:42:40" itemprop="dateModified" datetime="2022-04-12T14:42:40+08:00">2022-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -298,18 +298,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="SQL教程"><a href="#SQL教程" class="headerlink" title="SQL教程"></a>SQL教程</h1><h2 id="关系数据库概述"><a href="#关系数据库概述" class="headerlink" title="关系数据库概述"></a>关系数据库概述</h2><h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>数据库按照数据结构来组织、存储和管理数据，实际上，数据库一共有三种模型：</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>[TOC]</p>
+<h1 id="SQL教程"><a href="#SQL教程" class="headerlink" title="SQL教程"></a>SQL教程</h1><h2 id="关系数据库概述"><a href="#关系数据库概述" class="headerlink" title="关系数据库概述"></a>关系数据库概述</h2><h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>数据库按照数据结构来组织、存储和管理数据，实际上，数据库一共有三种模型：</p>
 <ul>
 <li>层次模型</li>
 <li>网状模型</li>
 <li>关系模型</li>
 </ul>
 <p>层次模型就是以“上下级”的层次关系来组织数据的一种方式，层次模型的数据结构看起来就像一颗树：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">        ┌─────┐<br>        │     │<br>        └─────┘<br>           │<br>   ┌───────┴───────┐<br>   │               │<br>┌─────┐         ┌─────┐<br>│     │         │     │<br>└─────┘         └─────┘<br>   │               │<br></code></pre></td></tr></table></figure>
-<p>┌───┴───┐       ┌───┴───┐<br>│       │       │       │<br>┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐<br>│     │ │     │ │     │ │     │<br>└─────┘ └─────┘ └─────┘ └─────┘<br>网状模型把每个数据节点和其他很多节点都连接起来，它的数据结构看起来就像很多城市之间的路网：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">┌─────┐      ┌─────┐<br></code></pre></td></tr></table></figure>
-<p>┌─│     │──────│     │──┐<br>│ └─────┘      └─────┘  │<br>│    │            │     │<br>│    └──────┬─────┘     │<br>│           │           │<br>┌─────┐     ┌─────┐     ┌─────┐<br>│     │─────│     │─────│     │<br>└─────┘     └─────┘     └─────┘<br>│           │           │<br>│     ┌─────┴─────┐     │<br>│     │           │     │<br>│  ┌─────┐     ┌─────┐  │<br>└──│     │─────│     │──┘<br>└─────┘     └─────┘<br>关系模型把数据看作是一个二维表格，任何数据都可以通过行号+列号来唯一确定，它的数据模型看起来就是一个Excel表：</p>
-<p>┌─────┬─────┬─────┬─────┬─────┐<br>│     │     │     │     │     │<br>├─────┼─────┼─────┼─────┼─────┤<br>│     │     │     │     │     │<br>├─────┼─────┼─────┼─────┼─────┤<br>│     │     │     │     │     │<br>├─────┼─────┼─────┼─────┼─────┤<br>│     │     │     │     │     │<br>└─────┴─────┴─────┴─────┴─────┘<br>随着时间的推移和市场竞争，最终，基于关系模型的关系数据库获得了绝对市场份额。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">        ┌─────┐<br>        │     │<br>        └─────┘<br>           │<br>   ┌───────┴───────┐<br>   │               │<br>┌─────┐         ┌─────┐<br>│     │         │     │<br>└─────┘         └─────┘<br>   │               │<br>┌───┴───┐       ┌───┴───┐<br>│       │       │       │<br>┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐<br>│     │ │     │ │     │ │     │<br>└─────┘ └─────┘ └─────┘ └─────┘<br></code></pre></td></tr></table></figure>
+<p>网状模型把每个数据节点和其他很多节点都连接起来，它的数据结构看起来就像很多城市之间的路网：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"> ┌─────┐      ┌─────┐<br><br>┌─│     │──────│     │──┐<br>│ └─────┘      └─────┘  │<br>│    │            │     │<br>│    └──────┬─────┘     │<br>│           │           │<br>┌─────┐     ┌─────┐     ┌─────┐<br>│     │─────│     │─────│     │<br>└─────┘     └─────┘     └─────┘<br>│           │           │<br>│     ┌─────┴─────┐     │<br>│     │           │     │<br>│  ┌─────┐     ┌─────┐  │<br>└──│     │─────│     │──┘<br>└─────┘     └─────┘<br></code></pre></td></tr></table></figure>
+<p>关系模型把数据看作是一个二维表格，任何数据都可以通过行号+列号来唯一确定，它的数据模型看起来就是一个Excel表：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">┌─────┬─────┬─────┬─────┬─────┐<br>│     │     │     │     │     │<br>├─────┼─────┼─────┼─────┼─────┤<br>│     │     │     │     │     │<br>├─────┼─────┼─────┼─────┼─────┤<br>│     │     │     │     │     │<br>├─────┼─────┼─────┼─────┼─────┤<br>│     │     │     │     │     │<br>└─────┴─────┴─────┴─────┴─────┘<br></code></pre></td></tr></table></figure><br>随着时间的推移和市场竞争，最终，基于关系模型的关系数据库获得了绝对市场份额。</p>
 <p>为什么关系数据库获得了最广泛的应用？</p>
 <p>因为相比层次模型和网状模型，关系模型理解和使用起来最简单。</p>
 <p>关系数据库的关系模型是基于数学理论建立的。我们把域（Domain）定义为一组具有相同数据类型的值的集合，给定一组域D1,D2,…,Dn，它们的笛卡尔集定义为D1×D2×……×Dn={(d1,d2,…,dn)|di∈Di,i=1,2,…,n}， 而D1×D2×……×Dn的子集叫作在域D1,D2,…,Dn上的关系，表示为R(D1,D2,…,Dn)，这里的R表示…(……算了，根本讲不明白，大家也不用理解。</p>
@@ -357,31 +357,7 @@
 </tbody>
 </table>
 </div>
-<p>其中，班级ID对应着另一个班级表：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>名称</th>
-<th>班主任</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>201</td>
-<td>二年级一班</td>
-<td>王老师</td>
-</tr>
-<tr>
-<td>202</td>
-<td>二年级二班</td>
-<td>李老师</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>通过给定一个班级名称，可以查到一条班级记录，根据班级ID，又可以查到多条学生记录，这样，二维表之间就通过ID映射建立了“一对多”关系。</p>
+<p>其中，班级ID对应着另一个班级表：<br>| ID   | 名称    | 班主任  |<br>| —— | ——- | —— |<br>| 201  | 二年级一班 | 王老师  |<br>| 202  | 二年级二班 | 李老师  |<br>通过给定一个班级名称，可以查到一条班级记录，根据班级ID，又可以查到多条学生记录，这样，二维表之间就通过ID映射建立了“一对多”关系。</p>
 <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：</p>
 <div class="table-container">
 <table>
@@ -1261,7 +1237,7 @@
 <p>现在，我们希望从上表中选取姓氏为 Adams 和 Carter 的人：</p>
 <p>我们可以使用下面的 <code>SELECT</code> 语句：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Persons<br><span class="hljs-keyword">WHERE</span> LastName <span class="hljs-keyword">IN</span> (<span class="hljs-string">&#x27;Adams&#x27;</span>,<span class="hljs-string">&#x27;Carter&#x27;</span>)<br></code></pre></td></tr></table></figure>
-<p>结果集：<br>|Id|LastName|FirstName|Address|City|<br>|—|————|————-|———-|——|<br>|1|Adams|John|Oxford Street|London|<br>|3|Carter|Thomas|Changan Street|Beijing|</p>
+<p>结果集：<br>| Id   | LastName | FirstName | Address        | City    |<br>| —— | ———— | ————- | ——————— | ———- |<br>| 1    | Adams    | John      | Oxford Street  | London  |<br>| 3    | Carter   | Thomas    | Changan Street | Beijing |</p>
 <h4 id="带有比较运算符的子查询"><a href="#带有比较运算符的子查询" class="headerlink" title="带有比较运算符的子查询"></a>带有比较运算符的子查询</h4><p>带有比较运算符的子查询是指父查询与子查询之间用比较运算符进行连接。当用户能确切知道内层查询返回的是单个值时，可以用 &gt;、&lt;、=、&gt;=、&lt;=、!=、或&lt;&gt;等比较运算符。</p>
 <p>找出每个学生超过他自己选修课程平均成绩的课程号</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> Sno,Cno<br><span class="hljs-keyword">FROM</span> SC X<br><span class="hljs-keyword">WHERE</span> Grade <span class="hljs-operator">&gt;=</span>(<span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">AVG</span>(Grade)<br>               <span class="hljs-keyword">FROM</span> SC y<br>               <span class="hljs-keyword">WHERE</span> y.Sno<span class="hljs-operator">=</span>x.Sno);<br></code></pre></td></tr></table></figure>
@@ -1388,7 +1364,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 更新id=5,6,7的记录</span><br><span class="hljs-keyword">UPDATE</span> students <span class="hljs-keyword">SET</span> name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;小牛&#x27;</span>, score<span class="hljs-operator">=</span><span class="hljs-number">77</span> <span class="hljs-keyword">WHERE</span> id<span class="hljs-operator">&gt;=</span><span class="hljs-number">5</span> <span class="hljs-keyword">AND</span> id<span class="hljs-operator">&lt;=</span><span class="hljs-number">7</span>;<br><span class="hljs-comment">-- 查询并观察结果:</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> students;<br></code></pre></td></tr></table></figure>
 <p>在 <code>UPDATE</code>语句中，更新字段时可以使用表达式。例如，把所有80分以下的同学的成绩加10分：</p>
 <p>``sql<br>— 更新score&lt;80的记录<br>UPDATE students SET score=score+10 WHERE score&lt;80;<br>— 查询并观察结果:<br>SELECT * FROM students;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>其中，`SET score=score+10`就是给当前行的`score`字段的值加上了`10`。<br><br>如果`WHERE`条件没有匹配到任何记录，`UPDATE`语句不会报错，也不会有任何记录被更新。例如：<br><br>```sql<br>-- 更新id=999的记录<br>UPDATE students SET score=100 WHERE id=999;<br>-- 查询并观察结果:<br>SELECT * FROM students;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>其中，`SET score=score+10`就是给当前行的`score`字段的值加上了`10`。<br><br>如果`WHERE`条件没有匹配到任何记录，`UPDATE`语句不会报错，也不会有任何记录被更新。例如：<br><br>​```sql<br>-- 更新id=999的记录<br>UPDATE students SET score=100 WHERE id=999;<br>-- 查询并观察结果:<br>SELECT * FROM students;<br></code></pre></td></tr></table></figure>
 <p>最后，要特别小心的是，<code>UPDATE</code>语句可以没有 <code>WHERE</code>条件，例如：</p>
 <blockquote>
 <p>UPDATE students SET score=60;</p>
@@ -1874,7 +1850,6 @@
 <td>如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false</td>
 <td>true</td>
 <td>false</td>
-<td>false</td>
 </tr>
 <tr>
 <td>useCache</td>
@@ -1886,7 +1861,6 @@
 <td>timeout</td>
 <td>设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定</td>
 <td>true</td>
-<td>false</td>
 <td>false</td>
 </tr>
 <tr>
@@ -1942,20 +1916,17 @@
 <td>如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false</td>
 <td>true</td>
 <td>false</td>
-<td>false</td>
 </tr>
 <tr>
 <td>useCache</td>
 <td>如果设为true，则语句的结果集将被缓存。select 语句默认设为false</td>
 <td>true</td>
 <td>false</td>
-<td>false</td>
 </tr>
 <tr>
 <td>timeout</td>
 <td>设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定</td>
 <td>true</td>
-<td>false</td>
 <td>false</td>
 </tr>
 <tr>
@@ -2037,20 +2008,17 @@
 <td>如果设为true，则会在每次语句调用的时候就会清空缓存。select 语句默认设为false</td>
 <td>true</td>
 <td>false</td>
-<td>false</td>
 </tr>
 <tr>
 <td>useCache</td>
 <td>如果设为true，则语句的结果集将被缓存。select 语句默认设为false</td>
 <td>true</td>
 <td>false</td>
-<td>false</td>
 </tr>
 <tr>
 <td>timeout</td>
 <td>设置驱动器在抛出异常前等待回应的最长时间，默认为不设值，由驱动器自己决定</td>
 <td>true</td>
-<td>false</td>
 <td>false</td>
 </tr>
 <tr>
@@ -2284,8 +2252,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/02/26/redis%E5%9F%BA%E7%A1%80/" rel="prev" title="Redis基础">
-      <i class="fa fa-chevron-left"></i> Redis基础
+    <a href="/2022/02/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="prev" title="数据库系统原理">
+      <i class="fa fa-chevron-left"></i> 数据库系统原理
     </a></div>
       <div class="post-nav-item">
     <a href="/2022/02/27/Socket/" rel="next" title="Socket">
@@ -2366,7 +2334,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2379,7 +2347,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2417,7 +2385,7 @@
           <h3 class="widget-title">标签云小团</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathjax/" rel="tag">Mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="tag">基础语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AF%95/" rel="tag">笔试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
       </div>
